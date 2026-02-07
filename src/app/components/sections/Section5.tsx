@@ -79,14 +79,6 @@ export default function Section5() {
           
         </div>
       </div>
-
-      {/* Footer Final Info */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full max-w-7xl px-6 flex justify-between items-center opacity-20">
-         <div className="h-px w-12 bg-white" />
-         <span className="text-[8px] font-light tracking-[1em] uppercase">Less friction, more structure.</span>
-         <div className="h-px w-12 bg-white" />
-      </div>
-
     </section>
   );
 }
