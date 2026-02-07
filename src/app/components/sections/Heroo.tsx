@@ -32,10 +32,10 @@ export default function Hero() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
 
 
-                            <div className="flex flex-wrap items-center gap-4">
+                            <div className="flex items-center gap-4">
                                 <a
                                     href="#contacto"
-                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded-lg bg-white text-sm font-medium text-black transition-transform active:scale-95"
+                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-white text-sm font-medium text-black transition-transform active:scale-95"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
                                         Iniciar consulta
@@ -44,10 +44,12 @@ export default function Hero() {
                                 </a>
                                 <a
                                     href="#proceso"
-                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded-lg bg-neutral-900 text-sm font-medium text-white/80 transition-transform active:scale-95"
+                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-neutral-900 text-sm font-medium text-white/80 transition-transform active:scale-95"
                                 >
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        Explorar más
                                     <MoveDown className="h-4 w-4 transition-transform group-hover:translate-y-1" strokeWidth={1} />
-                                    Explorar más
+                                    </span>
                                 </a>
                             </div>
                         </div>
