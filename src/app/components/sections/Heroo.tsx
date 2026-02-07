@@ -32,10 +32,10 @@ export default function Hero() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
 
 
-                            <div className="flex flex-wrap items-center gap-6 md:justify-end">
+                            <div className="flex flex-wrap items-center gap-4">
                                 <a
                                     href="#contacto"
-                                    className="group relative flex items-center justify-center overflow-hidden rounded-lg bg-white px-10 py-4 text-sm font-medium text-black transition-transform active:scale-95"
+                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded-lg bg-white text-sm font-medium text-black transition-transform active:scale-95"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
                                         Iniciar consulta
@@ -44,12 +44,10 @@ export default function Hero() {
                                 </a>
                                 <a
                                     href="#proceso"
-                                    className="group flex items-center gap-3 text-sm font-light text-white/50 transition-colors hover:text-white"
+                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded-lg bg-neutral-900 text-sm font-medium text-white/80 transition-transform active:scale-95"
                                 >
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:border-white/30">
-                                        <MoveDown className="h-4 w-4" strokeWidth={1} />
-                                    </div>
-                                    Explorar metodología
+                                    <MoveDown className="h-4 w-4 transition-transform group-hover:translate-y-1" strokeWidth={1} />
+                                    Explorar más
                                 </a>
                             </div>
                         </div>
