@@ -28,7 +28,7 @@ export default function Section3() {
       {/* Background Decor - Linea técnica superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:py-48">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-15 lg:py-15">
         <div className="flex flex-col space-y-24">
           
           {/* Header con estructura de terminal */}
@@ -95,7 +95,7 @@ export default function Section3() {
           </div>
 
           {/* Decorative Technical Footer for Section */}
-          <div className="flex items-center justify-center pt-10">
+          <div className="flex items-center justify-center">
             <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-white/5" />
             <div className="mx-8 px-4 py-1 border border-white/5 rounded-full">
                <span className="text-[9px] font-light tracking-[0.5em] text-white/20 uppercase">Versatility_Core</span>

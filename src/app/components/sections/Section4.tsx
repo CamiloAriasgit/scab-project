@@ -28,7 +28,7 @@ export default function Section4() {
       {/* Background Grid Accent */}
       <div className="absolute top-0 right-0 h-full w-1/3 border-l border-white/[0.03] bg-[radial-gradient(circle_at_top_right,white/[0.02],transparent)] hidden lg:block" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:py-56">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-10 lg:py-15">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           
           {/* Headline - Sticky on Desktop */}

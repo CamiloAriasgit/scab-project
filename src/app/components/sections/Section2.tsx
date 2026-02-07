@@ -18,7 +18,7 @@ export default function Section2() {
         <div className="absolute -right-64 top-1/2 h-[800px] w-[800px] -translate-y-1/2 rounded-full border border-white/[0.03]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:py-56">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-20 lg:py-25">
         <div className="flex flex-col gap-24">
           
           {/* Headline Section - Layout expansivo */}

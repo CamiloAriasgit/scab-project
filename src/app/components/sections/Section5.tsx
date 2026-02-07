@@ -14,7 +14,7 @@ export default function Section5() {
       {/* Background Finish - Una luz cenital muy tenue */}
       <div className="absolute top-0 left-1/2 h-[1px] w-full max-w-5xl -translate-x-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:py-64">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-10 lg:py-20 lg:pb-30">
         <div className="flex flex-col items-center">
           
           <div className="w-full max-w-4xl">
