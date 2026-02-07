@@ -20,7 +20,7 @@ export default function Hero() {
                     {/* Main Content Area */}
                     <div className="max-w-4xl space-y-5">
 
-                        <h1 className="text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                        <h1 className="text-5xl  leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
                             Sistemas web<br />que escalan negocios.
                         </h1>
                         <p className="text-sm leading-relaxed font-light text-white/40">
@@ -37,7 +37,7 @@ export default function Hero() {
                                     className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-white text-sm font-medium text-black transition-transform active:scale-95"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
-                                        Iniciar consulta
+                                        Empezar
                                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
                                     </span>
                                 </a>
@@ -54,13 +54,6 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* Side Decorative Text (Desktop Only) */}
-            <div className="absolute bottom-10 right-10 hidden rotate-90 origin-bottom-right lg:block">
-                <span className="text-[10px] font-light tracking-[0.5em] text-white/10 uppercase whitespace-nowrap">
-                    Digital Architecture © 2024 — All Rights Reserved
-                </span>
             </div>
         </section>
     );
