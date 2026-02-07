@@ -20,8 +20,8 @@ export default function Hero() {
                     {/* Main Content Area */}
                     <div className="max-w-4xl space-y-5">
 
-                        <h1 className="text-5xl font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                            Sistemas web que escalan negocios.
+                        <h1 className="text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+                            Sistemas web<br />que escalan negocios.
 
                         </h1>
                         <p className="text-sm leading-relaxed font-light text-white/40">
