@@ -11,7 +11,7 @@ export default function Section2() {
       {/* Elementos de "Ingeniería" - Decoración técnica */}
       <div className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute top-0 left-10 h-20 w-px bg-gradient-to-b from-white/20 to-transparent" />
-        <div className="absolute top-10 left-8 text-[9px] font-light tracking-[0.3em] text-white/20 uppercase rotate-90">
+        <div className="absolute top-10 left-8 text-[9px] font-light tracking-[0.3em] text-white/40 uppercase rotate-90">
           Core_Philosophy
         </div>
         {/* Círculos concéntricos muy tenues en el fondo para dar profundidad */}
