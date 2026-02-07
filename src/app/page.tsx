@@ -5,10 +5,12 @@ import Section3 from './components/sections/Section3';
 import Section4 from './components/sections/Section4';
 import Section5 from './components/sections/Section5';
 import Footer from './components/ui/Footer';
+import Header from './components/ui/Header';
 
 export default function Home() {
   return (
     <main>
+      <Header />
       <Hero />
       <Section2 />
       <Section3 />

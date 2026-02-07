@@ -6,7 +6,7 @@ export default function Section2() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
+    <section id="Explorar" className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
       
       {/* Elementos de "Ingeniería" - Decoración técnica */}
       <div className="pointer-events-none absolute inset-0 opacity-40">

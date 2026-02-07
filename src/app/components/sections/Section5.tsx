@@ -9,7 +9,7 @@ export default function Section5() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
+    <section id="contacto" className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
       
       {/* Background Finish - Una luz cenital muy tenue */}
       <div className="absolute top-0 left-1/2 h-[1px] w-full max-w-5xl -translate-x-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />

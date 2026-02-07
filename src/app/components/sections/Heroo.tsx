@@ -42,7 +42,7 @@ export default function Hero() {
                                     </span>
                                 </a>
                                 <a
-                                    href="#proceso"
+                                    href="#Explorar"
                                     className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-neutral-900 text-sm font-medium text-white/80 transition-transform active:scale-95"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">

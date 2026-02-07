@@ -23,7 +23,7 @@ export default function Section4() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
+    <section id="proceso" className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
       
       {/* Background Grid Accent */}
       <div className="absolute top-0 right-0 h-full w-1/3 border-l border-white/[0.03] bg-[radial-gradient(circle_at_top_right,white/[0.02],transparent)] hidden lg:block" />

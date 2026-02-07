@@ -23,7 +23,7 @@ export default function Section3() {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
+    <section id="sistemas" className="relative w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20">
       
       {/* Background Decor - Linea técnica superior */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
