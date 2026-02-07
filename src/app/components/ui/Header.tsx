@@ -2,14 +2,14 @@ import { ArrowUpRight, Cpu } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full px-6 pt-6">
+    <header className="fixed top-0 z-50 w-full px-3 pt-3">
       {/* Container Flotante con efecto Glassmorphism */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-full border border-white/[0.08] bg-black/[0.2] backdrop-blur-xl transition-all duration-500 hover:border-white/[0.15]">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-lg border border-white/[0.08] bg-black/[0.2] backdrop-blur-xl transition-all duration-500 hover:border-white/[0.15]">
         
         {/* Glow interno sutil */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent" />
 
-        <div className="relative flex h-14 items-center justify-between px-6 sm:px-8">
+        <div className="relative flex h-14 items-center justify-between px-2 sm:px-8">
           
           {/* Brand - El Monograma Técnico */}
           <div className="flex items-center gap-3 group cursor-default">
@@ -46,9 +46,9 @@ export default function Header() {
             
             <a
               href="#contacto"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-5 py-2 text-[10px] font-medium tracking-widest text-black transition-all hover:bg-[#f0f0f0] active:scale-95 uppercase"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded bg-white px-5 py-2 text-[10px] font-medium tracking-widest text-black transition-all hover:bg-[#f0f0f0] active:scale-95 uppercase"
             >
-              <span className="relative z-10">Iniciar proyecto</span>
+              <span className="relative z-10">Comenzar</span>
               <ArrowUpRight
                 className="relative z-10 h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 strokeWidth={2}
