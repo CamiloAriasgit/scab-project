@@ -6,8 +6,8 @@ export default function Hero() {
 
             {/* Refined Technical Background */}
             <div className="pointer-events-none absolute inset-0">
-                {/* Subtle Grid */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+                {/* Subtle Grid - Aclarada con white/10 y máscara optimizada */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)]" />
 
                 {/* Ambient Glows */}
                 <div className="absolute -top-[10%] left-1/4 h-[600px] w-[600px] rounded-full bg-white/[0.02] blur-[120px]" />
@@ -22,7 +22,6 @@ export default function Hero() {
 
                         <h1 className="text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
                             Sistemas web<br />que escalan negocios.
-
                         </h1>
                         <p className="text-sm leading-relaxed font-light text-white/40">
                             Diseño y desarrollo pensados para operar, medir y crecer con claridad.
