@@ -14,8 +14,8 @@ export default function Hero() {
         <div className="absolute top-[20%] -right-[10%] h-[400px] w-[400px] rounded-full bg-white/[0.01] blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-24 lg:py-32">
-        <div className="flex flex-col space-y-16">
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-24 lg:py-3">
+        <div className="flex flex-col space-y-1">
           
           {/* Main Content Area */}
           <div className="max-w-4xl space-y-12">
@@ -29,7 +29,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-5xl font-light leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+            <h1 className="text-3xl font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               Sistemas web que <span className="text-white/35">ordenan y escalan.</span> negocios.
               
             </h1>
