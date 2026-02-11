@@ -21,7 +21,7 @@ export default function Header() {
               <span className="text-[11px] font-light tracking-[0.3em] text-white/90 uppercase">
                 SCAB
               </span>
-              <span className="text-[8px] font-light tracking-[0.2em] text-white/30 uppercase leading-none">
+              <span className="text-[8px] font-light tracking-[0.2em] text-white/30 uppercase leading-none pt-1">
                 Systems_Core
               </span>
             </div>

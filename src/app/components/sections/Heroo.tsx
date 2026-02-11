@@ -1,60 +1,54 @@
 import { ArrowRight, MoveDown } from "lucide-react";
 
 export default function Hero() {
-    return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-[#050505] text-white selection:bg-white/20 flex flex-col justify-center">
+  return (
+    <section className="relative min-h-screen w-full bg-[#F6F8FB] flex flex-col justify-center selection:bg-[#0B0D12]/5">
+      
+      {/* Layout Principal: Mobile First & Responsive */}
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-20 md:py-32">
+        <div className="flex flex-col items-center">
+          
+          {/* Contenedor de Texto */}
+          <div className="max-w-4xl space-y-8 md:space-y-10 flex flex-col items-center">
+            
+            {/* Título: Near Black - Autoridad y Claridad */}
+            <h1 className="text-[30px] leading-[1.1] tracking-tight text-center font-medium text-[#0B0D12] lg:text-5xl">
+              Sistemas web<br />
+              <span className="opacity-90">que escalan negocios.</span>
+            </h1>
 
-            {/* Refined Technical Background */}
-            <div className="pointer-events-none absolute inset-0">
-                {/* Subtle Grid - Aclarada con white/10 y máscara optimizada */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff1a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)]" />
+            {/* Subtítulo: Gray Técnico - Lectura Secundaria */}
+            <p className="max-w-xl text-[13px] text-center md:text-xl leading-relaxed text-[#5E6472] font-normal">
+              Diseño y desarrollo pensados para operar, medir y crecer con claridad.
+            </p>
 
-                {/* Ambient Glows */}
-                <div className="absolute -top-[10%] left-1/4 h-[600px] w-[600px] rounded-full bg-white/[0.02] blur-[120px]" />
-                <div className="absolute top-[20%] -right-[10%] h-[400px] w-[400px] rounded-full bg-white/[0.01] blur-[100px]" />
+            {/* Acciones: Minimalismo Tecnológico */}
+            <div className="flex flex-row items-start justify-center sm:items-center sm:justify-start gap-4 pt-4">
+              
+              {/* CTA Primario: Sólido y con bordes suaves (estilo Apple) */}
+              <a
+                href="#contacto"
+                className="group h-12 w-35 flex items-center justify-center gap-2 rounded-xl bg-[#0B0D12] text-sm font-medium text-white transition-all hover:opacity-90 active:scale-[0.98]"
+              >
+                Empezar
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
+              </a>
+
+              {/* CTA Secundario: Basado en contraste de bordes sutiles */}
+              <a
+                href="#Explorar"
+                className="group h-12 w-35 flex items-center justify-center gap-2 rounded-xl border border-[#5E6472]/15 bg-transparent text-sm font-medium text-[#5E6472] transition-all hover:bg-[#0B0D12]/5 active:scale-[0.98]"
+              >
+                Explorar más
+                <MoveDown className="h-4 w-4 transition-transform group-hover:translate-y-1" strokeWidth={1.5} />
+              </a>
+              
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div className="relative mx-auto w-full max-w-7xl px-6 py-24 lg:py-3">
-                <div className="flex flex-col space-y-1">
-
-                    {/* Main Content Area */}
-                    <div className="max-w-4xl space-y-5">
-
-                        <h1 className="text-5xl  leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                            Sistemas web<br />que escalan negocios.
-                        </h1>
-                        <p className="text-sm leading-relaxed font-light text-white/40">
-                            Diseño y desarrollo pensados para operar, medir y crecer con claridad.
-                        </p>
-
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
-
-
-                            <div className="flex items-center gap-4">
-                                <a
-                                    href="#contacto"
-                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-white text-sm font-medium text-black transition-transform active:scale-95"
-                                >
-                                    <span className="relative z-10 flex items-center gap-2">
-                                        Empezar
-                                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
-                                    </span>
-                                </a>
-                                <a
-                                    href="#Explorar"
-                                    className="h-10 w-40 group relative flex items-center justify-center overflow-hidden rounded bg-neutral-900 text-sm font-medium text-white/80 transition-transform active:scale-95"
-                                >
-                                    <span className="relative z-10 flex items-center gap-2">
-                                        Explorar más
-                                    <MoveDown className="h-4 w-4 transition-transform group-hover:translate-y-1" strokeWidth={1} />
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+      {/* Decoración No Funcional: Eliminada. Solo queda el espacio y el aire. */}
+    </section>
+  );
 }
