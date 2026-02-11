@@ -2,55 +2,50 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#050505] text-white/60 selection:bg-white/10">
+    <footer className="w-full bg-[#0B0D12] text-white/60 selection:bg-white/10">
       
-      {/* Top Border Line con gradiente de salida */}
+      {/* Línea de separación superior - Minimalismo puro */}
       <div className="mx-auto max-w-7xl px-6">
-        <div className="h-px w-full bg-gradient-to-r from-white/5 via-white/10 to-white/5" />
+        <div className="h-px w-full bg-white/5" />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:py-20">
-        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+        <div className="flex flex-col gap-16 md:flex-row md:items-end md:justify-between">
 
-          {/* Left: Identity & Core Message */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full border border-white/20" />
-              <span className="text-[10px] font-light tracking-[0.4em] text-white/20 uppercase">Core_System_2026</span>
+          {/* Izquierda: Identidad y Propósito */}
+          <div className="space-y-8">
+            <div className="flex items-center gap-3">
+              <div className="h-1.5 w-1.5 rounded-full bg-white/40" />
+              <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">
+                2026 Edition
+              </span>
             </div>
             
-            <div className="space-y-2">
-              <p className="max-w-[280px] text-sm font-light leading-relaxed text-white/80">
+            <div className="space-y-4">
+              <p className="max-w-[320px] text-lg md:text-xl font-normal leading-tight text-white/90">
                 Sistemas web diseñados para <br />
-                <span className="text-white/40 italic">operar y escalar.</span>
+                <span className="text-white/40 italic font-light">operar y escalar.</span>
               </p>
-              <p className="text-[10px] font-light tracking-wider text-white/20">
+              <p className="text-[11px] font-medium tracking-wider text-white/20 uppercase">
                 © 2026 · Arquitectura digital con propósito
               </p>
             </div>
           </div>
 
-          {/* Right: Functional Link */}
-          <div className="flex flex-col items-start md:items-end gap-6">
-            {/* Metadata decorativa tipo terminal */}
-            <div className="hidden lg:block">
-               <p className="text-[9px] font-light text-white/10 tracking-[0.2em] leading-none">
-                 LAT: 6.2442° N // LONG: 75.5812° W
-               </p>
-            </div>
-
+          {/* Derecha: Acción Funcional */}
+          <div className="flex flex-col items-start md:items-end gap-8">
             <a
               href="#contacto"
-              className="group relative inline-flex items-center gap-2 text-xs font-light tracking-widest text-white/50 transition-all hover:text-white uppercase"
+              className="group flex items-center gap-4 text-sm font-medium tracking-widest text-white/60 transition-all hover:text-white uppercase"
             >
               <span className="relative">
                 Hablemos de tu sistema
-                <div className="absolute -bottom-1 left-0 h-px w-0 bg-white/40 transition-all group-hover:w-full" />
+                <div className="absolute -bottom-2 left-0 h-px w-0 bg-white/60 transition-all duration-500 group-hover:w-full" />
               </span>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/5 transition-colors group-hover:border-white/20 group-hover:bg-white/[0.02]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 transition-all duration-500 group-hover:border-white/40 group-hover:bg-white/5">
                 <ArrowUpRight
-                  className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  strokeWidth={1}
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  strokeWidth={1.5}
                 />
               </div>
             </a>
@@ -59,17 +54,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar: El remate final */}
-      <div className="w-full border-t border-white/[0.02] py-6">
+      {/* Barra Inferior: El remate final sin ruido */}
+      <div className="w-full border-t border-white/5 py-8">
         <div className="mx-auto max-w-7xl px-6 flex justify-between items-center">
-          <span className="text-[8px] font-light tracking-[0.8em] text-white/10 uppercase">
+          <span className="text-[9px] font-bold tracking-[0.5em] text-white/10 uppercase">
             Minimalism through structure
           </span>
-          <div className="flex gap-4">
-            <div className="h-1 w-1 bg-white/[0.05]" />
-            <div className="h-1 w-1 bg-white/[0.1]" />
-            <div className="h-1 w-1 bg-white/[0.05]" />
-          </div>
+          <div className="h-[1px] w-12 bg-white/10" />
         </div>
       </div>
 
