@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-50 w-full px-4 pt-6 md:pt-8 pointer-events-none">
+    <header className="fixed top-0 z-50 w-full px-2 pt-2 md:pt-8 pointer-events-none">
       {/* Container Flotante: Mobile First & Estética de Precisión */}
       <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#5E6472]/10 bg-[#F6F8FB]/80 backdrop-blur-md transition-all duration-500 pointer-events-auto shadow-[0_8px_32px_-10px_rgba(0,0,0,0.02)]">
         
