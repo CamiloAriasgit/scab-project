@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full px-2 pt-2 md:pt-8 pointer-events-none">
       {/* Container Flotante: Mobile First & Estética de Precisión */}
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#5E6472]/10 bg-[#F6F8FB]/80 backdrop-blur-md transition-all duration-500 pointer-events-auto shadow-[0_8px_32px_-10px_rgba(0,0,0,0.02)]">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#5E6472]/0 bg-[#F6F8FB]/80 backdrop-blur-md transition-all duration-500 pointer-events-auto shadow-lg shadow-[#0B0D12]/10 hover:shadow-[#0B0D12]/30 hover:shadow-2xl">
         
         <div className="flex h-15 items-center justify-between px-6">
           
