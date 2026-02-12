@@ -4,15 +4,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full px-4 pt-6 md:pt-8 pointer-events-none">
       {/* Container Flotante: Mobile First & Estética de Precisión */}
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#5E6472]/10 bg-white/80 backdrop-blur-md transition-all duration-500 pointer-events-auto shadow-[0_8px_32px_-10px_rgba(0,0,0,0.02)]">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#5E6472]/10 bg-[#F6F8FB]/80 backdrop-blur-md transition-all duration-500 pointer-events-auto shadow-[0_8px_32px_-10px_rgba(0,0,0,0.02)]">
         
         <div className="flex h-15 items-center justify-between px-6">
           
           {/* Brand - El Monograma Técnico Destilado */}
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="flex h-5 w-5 items-center justify-center rounded-md bg-[#0B0D12] text-white transition-transform group-hover:scale-105">
-              <span className="text-[10px] font-bold">S</span>
-            </div>
+            
             <div className="flex flex-col">
               <span className="text-[12px] font-bold tracking-[0.1em] text-[#0B0D12] leading-none">
                 SCAB
