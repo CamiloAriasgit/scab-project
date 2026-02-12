@@ -1,23 +1,23 @@
 export function SystemMockup() {
   return (
-    <div className="relative w-full max-w-4xl pt-12 group perspective-1000">
+    <div className="relative w-full max-w-4xl pt-5 group perspective-1000">
       {/* Contenedor Principal con efecto de inclinación sutil */}
-      <div className="relative aspect-[16/10] w-full rounded-2xl border border-[#5E6472]/10 bg-white shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] overflow-hidden transition-transform duration-700 group-hover:rotate-x-1">
+      <div className="relative aspect-[16/10] w-full rounded-2xl border border-[#5E6472]/10 bg-white shadow-2xl overflow-hidden transition-transform duration-700 group-hover:rotate-x-1">
         
         {/* Top Bar: Estilo Browser Pro */}
         <div className="h-10 border-b border-[#5E6472]/5 bg-[#F6F8FB]/50 flex items-center justify-between px-4">
           <div className="flex gap-1.5">
             <div className="h-2 w-2 rounded-full bg-[#0B0D12]/10" />
-            <div className="h-2 w-2 rounded-full bg-[#0B0D12]/10" />
-            <div className="h-2 w-2 rounded-full bg-[#0B0D12]/10" />
+            <div className="h-2 w-2 rounded-full bg-[#0B0D12]/20" />
+            <div className="h-2 w-2 rounded-full bg-[#0B0D12]/30" />
           </div>
-          <div className="h-4 w-32 rounded-md bg-[#0B0D12]/5 animate-pulse" />
+          <div className="h-4 w-32 rounded-md bg-[#0B0D12]/15 animate-pulse" />
           <div className="w-6" /> {/* Spacer */}
         </div>
 
         <div className="flex h-full">
           {/* Sidebar Técnica */}
-          <div className="w-1/4 border-r border-[#5E6472]/5 p-4 space-y-6 hidden md:block">
+          <div className="w-1/4 border-r border-[#5E6472]/10 p-4 space-y-6 hidden md:block">
             <div className="space-y-3">
               <div className="h-2 w-full rounded-full bg-[#0B0D12]/10" />
               <div className="h-2 w-[80%] rounded-full bg-[#0B0D12]/5" />
