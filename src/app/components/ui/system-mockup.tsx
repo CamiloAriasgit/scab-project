@@ -1,6 +1,6 @@
 export function SystemMockup() {
   return (
-    <div className="relative w-full max-w-4xl pt-5 group perspective-1000">
+    <div className="relative w-full max-w-4xl group perspective-1000">
       {/* Contenedor Principal con efecto de inclinación sutil */}
       <div className="relative aspect-[16/10] w-full rounded-2xl border border-[#5E6472]/10 bg-white shadow-2xl overflow-hidden transition-transform duration-700 group-hover:rotate-x-1">
         

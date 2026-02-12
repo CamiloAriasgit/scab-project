@@ -11,11 +11,11 @@ export default function Hero() {
           
           {/* BLOQUE TEXTO: Título y Párrafo */}
           <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 order-1">
-            <h1 className="text-[32px] sm:text-[40px] leading-[1] tracking-tight font-medium text-[#0B0D12] lg:text-6xl xl:text-7xl">
+            <h1 className="text-[30px] sm:text-[40px] leading-[1] tracking-tight font-medium text-[#0B0D12] lg:text-6xl xl:text-7xl">
               Sistemas web<br />
               que escalan negocios.
             </h1>
-            <p className="max-w-xl text-[14px] md:text-[18px] leading-relaxed text-[#5E6472] font-normal">
+            <p className="max-w-xl text-[13px] md:text-[18px] leading-relaxed text-[#5E6472] font-normal">
               Diseño y desarrollo pensados para operar,<br className="hidden md:block" /> medir y crecer con claridad.
             </p>
           </div>
