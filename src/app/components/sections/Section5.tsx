@@ -35,15 +35,6 @@ export default function Contact() {
           {/* Lado Derecho: La Acción Final - Minimalismo Radical */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end lg:pt-4">
             <div className="w-full max-w-sm space-y-10">
-              <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-[#0B0D12]">
-                  ¿Construimos tu activo?
-                </h3>
-                <p className="text-[#5E6472] text-base leading-relaxed">
-                  Hablemos sobre el sistema que tu operación necesita para el siguiente nivel.
-                </p>
-              </div>
-
               <a
                 href="mailto:tu@email.com"
                 className="group flex h-16 items-center justify-between rounded-2xl bg-[#0B0D12] px-8 text-lg font-medium text-white transition-all hover:opacity-95 active:scale-[0.98]"
@@ -51,11 +42,6 @@ export default function Contact() {
                 Iniciar conversación
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
-              
-              {/* Nota sutil de pie de página */}
-              <p className="text-[11px] font-medium text-[#5E6472]/30 tracking-[0.2em] uppercase">
-                Proyectos limitados por trimestre.
-              </p>
             </div>
           </div>
 

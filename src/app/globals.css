@@ -3,7 +3,7 @@
 :root {
   --background: #F6F8FB; 
   --foreground: #0B0D12;
-  --muted-foreground: #5E6472; /* Para párrafos y textos secundarios */
+  --muted-foreground: #5E6472; /* Para párrafos y textos secundarios 0B0D12 */
   --secondary: #FFFFFF;       
 }
 

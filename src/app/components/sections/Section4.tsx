@@ -69,7 +69,7 @@ function ProcessHeader({ visible }: { visible: boolean }) {
         }}
       >
         <span className="h-px w-6 bg-foreground/15 sm:w-8" />
-        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/60">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#5E6472]/60">
           Metodologia
         </span>
         <span className="h-px w-6 bg-foreground/15 sm:w-8 lg:hidden" />
@@ -83,11 +83,11 @@ function ProcessHeader({ visible }: { visible: boolean }) {
         }}
       >
         Un proceso{" "}
-        <span className="text-muted-foreground/25 italic">claro.</span>
+        <span className="text-[#5E6472]/25 italic">claro.</span>
       </h2>
 
       <p
-        className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground sm:text-[15px] lg:max-w-md lg:text-base"
+        className="max-w-sm text-pretty text-sm leading-relaxed text-[#5E6472]/70 sm:text-[15px] lg:max-w-md lg:text-base"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(16px)",
@@ -189,7 +189,7 @@ function StepCard({
             style={{
               color: isActive
                 ? "hsl(var(--foreground) / 0.5)"
-                : "hsl(var(--muted-foreground) / 0.35)",
+                : "hsl(var(--[#5E6472]) / 0.35)",
             }}
           >
             {step.keyword}
@@ -225,7 +225,7 @@ function StepCard({
             opacity: isActive ? 1 : 0,
           }}
         >
-          <p className="max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
+          <p className="max-w-lg text-sm leading-relaxed text-[#5E6472]/70 sm:text-[15px]">
             {step.desc}
           </p>
         </div>

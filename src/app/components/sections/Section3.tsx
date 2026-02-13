@@ -122,7 +122,7 @@ function TierCard({
 
   return (
     <div
-      className="group relative flex flex-col justify-between rounded-2xl border border-foreground/[0.04] bg-background/80 p-6 backdrop-blur-md sm:rounded-3xl sm:p-8 lg:p-10"
+      className="group relative flex flex-col justify-between rounded-2xl border border-foreground/[0.04] bg-background/80 p-6 backdrop-blur-md sm:rounded-3xl sm:p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-shadow duration-200"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible
