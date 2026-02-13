@@ -7,7 +7,7 @@ function StatusBadge() {
         <span className="animate-hero-pulse absolute inline-flex h-full w-full rounded-full bg-emerald-500" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
       </span>
-      <span className="text-xs font-medium tracking-wide text-muted-foreground">
+      <span className="text-xs font-medium tracking-wide text-[#5E6472]">
         Disponible para proyectos
       </span>
     </div>
@@ -20,10 +20,10 @@ function HeroHeading() {
       <h1 className="text-balance text-center text-[clamp(2rem,6vw,4.5rem)] font-medium leading-[0.95] tracking-tight text-foreground">
         Sistemas web
         <br />
-        <span className="text-muted-foreground">que escalan negocios.</span>
+        <span className="text-[#5E6472]">que escalan negocios.</span>
       </h1>
 
-      <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-muted-foreground sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
+      <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
         Diseno y desarrollo pensados para operar, medir y crecer con claridad.
       </p>
     </div>
@@ -49,7 +49,7 @@ function HeroActions() {
 
       <a
         href="#explorar"
-        className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-foreground/[0.08] bg-secondary/50 text-sm font-medium text-muted-foreground backdrop-blur-sm transition-all duration-300 hover:border-foreground/[0.15] hover:bg-secondary hover:text-foreground active:scale-[0.97] sm:h-14 sm:w-52 sm:text-[15px]"
+        className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-foreground/[0.08] bg-secondary/50 text-sm font-medium text-[#5E6472] backdrop-blur-sm transition-all duration-300 hover:border-foreground/[0.15] hover:bg-secondary hover:text-foreground active:scale-[0.97] sm:h-14 sm:w-52 sm:text-[15px]"
       >
         Explorar mas
         <MoveDown
@@ -69,9 +69,9 @@ function MetricPill({
   label: string;
 }) {
   return (
-    <div className="flex items-center gap-2 text-xs text-muted-foreground sm:text-sm">
+    <div className="flex items-center gap-2 text-xs text-[#5E6472] sm:text-sm">
       <span className="font-semibold tabular-nums text-foreground">{value}</span>
-      <span className="text-muted-foreground/60">{label}</span>
+      <span className="text-[#5E6472]/60">{label}</span>
     </div>
   );
 }

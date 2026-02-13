@@ -23,7 +23,7 @@ function SectionHeader() {
     <div className="flex flex-col gap-5 lg:gap-6">
       <div className="flex items-center gap-3">
         <span className="h-px w-8 bg-foreground/20" />
-        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/60">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#5E6472]/60">
           Filosofia
         </span>
       </div>
@@ -31,12 +31,12 @@ function SectionHeader() {
       <h2 className="text-balance text-[clamp(2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-tight text-foreground">
         No todo sitio web{" "}
         <br className="hidden sm:block" />
-        <span className="text-muted-foreground/30 italic">es un sistema.</span>
+        <span className="text-[#5E6472]/30 italic">es un sistema.</span>
       </h2>
 
-      <p className="max-w-md text-sm leading-relaxed text-muted-foreground sm:text-[15px] lg:text-base">
+      <p className="max-w-md text-sm leading-relaxed text-[#5E6472] sm:text-[15px] lg:text-base">
         Existimos para operar, medir y tomar decisiones.{" "}
-        <span className="text-muted-foreground/40">
+        <span className="text-[#5E6472]/40">
           Todo lo demas es solo presencia.
         </span>
       </p>
@@ -62,7 +62,7 @@ function ConceptCard({
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-foreground transition-colors duration-500 lg:group-hover:bg-foreground lg:group-hover:text-background">
               <Icon className="h-4 w-4" strokeWidth={1.8} />
             </div>
-            <span className="text-[10px] font-bold uppercase italic tracking-[0.2em] text-muted-foreground/50">
+            <span className="text-[10px] font-bold uppercase italic tracking-[0.2em] text-[#5E6472]/50">
               {item.label}
             </span>
           </div>
@@ -72,7 +72,7 @@ function ConceptCard({
         </div>
 
         {/* Main text */}
-        <p className="text-base leading-snug text-muted-foreground transition-colors duration-500 sm:text-lg lg:text-xl lg:group-hover:text-foreground">
+        <p className="text-base leading-snug text-[#5E6472] transition-colors duration-500 sm:text-lg lg:text-xl lg:group-hover:text-foreground">
           {item.text}
         </p>
       </div>
