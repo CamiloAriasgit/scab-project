@@ -7,33 +7,29 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     id: "01",
-    title: "Entender el contexto",
-    desc: "Antes de escribir una linea de codigo, entendemos como opera tu negocio y que necesita ahora.",
-    keyword: "Diagnostico",
+    title: "Diagnostico",
+    desc: "Entender que debe comunicar y que debe medirse.",
   },
   {
     id: "02",
-    title: "Disenar el sistema correcto",
-    desc: "No todo es una web, no todo es una plataforma. Se define la estructura minima que resuelve el problema real.",
-    keyword: "Arquitectura",
+    title: "Arquitectura",
+    desc: "Disenar estructura y flujo antes de escribir codigo.",
   },
   {
     id: "03",
-    title: "Construir con vision de crecimiento",
-    desc: "Se desarrolla pensando en operacion, metricas y evolucion, incluso si hoy el sistema es simple.",
-    keyword: "Desarrollo",
+    title: "Desarrollo",
+    desc: "Construccion limpia, optimizada y preparada para crecer.",
   },
   {
     id: "04",
-    title: "Entrega y control",
-    desc: "El sistema queda en tus cuentas, con acceso, metricas y claridad total sobre lo que tienes y como funciona.",
-    keyword: "Despliegue",
+    title: "Entrega",
+    desc: "Accesos, dominio, hosting, metricas y panel en tus manos.",
   },
 ] as const;
 
-/* ─── Intersection observer hook ─── */
+/* ─── Scroll reveal ─── */
 
-function useInView(threshold = 0.1) {
+function useReveal(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -56,386 +52,111 @@ function useInView(threshold = 0.1) {
   return { ref, visible };
 }
 
-/* ─── Section header ─── */
+/* ─── Single step row ─── */
 
-function ProcessHeader({ visible }: { visible: boolean }) {
-  return (
-    <div className="flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
-      <div
-        className="flex items-center gap-3 transition-all duration-700"
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(16px)",
-        }}
-      >
-        <span className="h-px w-6 bg-foreground/15 sm:w-8" />
-        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#5E6472]/60">
-          Metodologia
-        </span>
-        <span className="h-px w-6 bg-foreground/15 sm:w-8 lg:hidden" />
-      </div>
-
-      <h2
-        className="text-balance text-[clamp(2rem,5.5vw,4rem)] font-medium leading-[1] tracking-tight text-foreground transition-all duration-700 delay-100"
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(20px)",
-        }}
-      >
-        Un proceso{" "}
-        <span className="text-[#5E6472]/25 italic">claro.</span>
-      </h2>
-
-      <p
-        className="max-w-sm text-pretty text-sm leading-relaxed text-[#5E6472]/70 sm:text-[15px] lg:max-w-md lg:text-base"
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(16px)",
-          transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
-        }}
-      >
-        Cada decision tecnica responde a una decision de negocio.{" "}
-        <span className="font-medium text-foreground">
-          Nada se construye porque si.
-        </span>
-      </p>
-    </div>
-  );
-}
-
-/* ─── Single step card — the core visual element ─── */
-
-function StepCard({
+function StepRow({
   step,
   index,
   visible,
-  isActive,
-  onActivate,
 }: {
   step: (typeof steps)[number];
   index: number;
   visible: boolean;
-  isActive: boolean;
-  onActivate: () => void;
 }) {
-  const delay = 0.25 + index * 0.1;
+  const delay = 0.15 + index * 0.1;
 
   return (
     <div
-      className="group relative cursor-pointer"
+      className="group"
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(28px)",
+        transform: visible ? "translateY(0)" : "translateY(16px)",
         transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
       }}
-      onClick={onActivate}
-      onMouseEnter={onActivate}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          onActivate();
-        }
-      }}
-      aria-label={`Paso ${step.id}: ${step.title}`}
     >
-      {/* Giant background number */}
-      <span
-        className="animate-process-number-glow pointer-events-none absolute -right-2 -top-4 select-none font-medium text-foreground sm:-right-4 sm:-top-8"
+      {/* Divider */}
+      <div
+        className="h-px w-full origin-left bg-foreground/[0.06]"
         style={{
-          fontSize: "clamp(5rem, 12vw, 10rem)",
-          lineHeight: 1,
-          opacity: isActive ? 0.08 : 0.03,
-          transition: "opacity 0.6s ease",
-          animationDelay: `${index * 1.2}s`,
+          transform: visible ? "scaleX(1)" : "scaleX(0)",
+          transition: `transform 1s cubic-bezier(0.16, 1, 0.3, 1) ${delay - 0.05}s`,
         }}
-        aria-hidden="true"
-      >
-        {step.id}
-      </span>
+      />
 
-      <div className="relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-foreground/[0.04] p-6 sm:rounded-3xl sm:p-8 lg:p-10">
-        {/* Active indicator — left edge accent bar */}
-        <div
-          className="absolute left-0 top-0 h-full w-[2px] rounded-full bg-foreground transition-all duration-500"
-          style={{
-            opacity: isActive ? 1 : 0,
-            transform: isActive ? "scaleY(1)" : "scaleY(0.3)",
-            transformOrigin: "top",
-          }}
-        />
-
-        {/* Top row */}
-        <div className="flex items-center gap-4">
-          {/* Step number chip */}
-          <div
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-[11px] font-bold tabular-nums transition-all duration-500"
-            style={{
-              background: isActive
-                ? "hsl(var(--foreground))"
-                : "hsl(var(--secondary))",
-              color: isActive
-                ? "hsl(var(--background))"
-                : "hsl(var(--foreground))",
-            }}
-          >
-            {step.id}
-          </div>
-
-          {/* Keyword tag */}
-          <span
-            className="text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors duration-500"
-            style={{
-              color: isActive
-                ? "hsl(var(--foreground) / 0.5)"
-                : "hsl(var(--[#5E6472]) / 0.35)",
-            }}
-          >
-            {step.keyword}
-          </span>
-
-          {/* Connecting line to title */}
-          <div
-            className="hidden h-px flex-1 bg-foreground/[0.06] sm:block"
-            style={{
-              opacity: isActive ? 1 : 0.4,
-              transition: "opacity 0.5s ease",
-            }}
-          />
-        </div>
+      <div className="flex flex-col gap-3 py-7 sm:gap-4 sm:py-9 lg:flex-row lg:items-baseline lg:gap-0 lg:py-11">
+        {/* Number */}
+        <span className="text-[11px] font-medium tabular-nums tracking-[0.2em] text-foreground/15 transition-colors duration-500 lg:w-20 lg:shrink-0 lg:group-hover:text-foreground/40">
+          {step.id}
+        </span>
 
         {/* Title */}
-        <h3
-          className="text-lg font-semibold tracking-tight transition-colors duration-500 sm:text-xl lg:text-2xl"
-          style={{
-            color: isActive
-              ? "hsl(var(--foreground))"
-              : "hsl(var(--foreground) / 0.6)",
-          }}
-        >
+        <h3 className="text-[clamp(1.15rem,2.8vw,1.5rem)] font-medium leading-snug tracking-tight text-foreground/75 transition-colors duration-500 lg:w-52 lg:shrink-0 lg:group-hover:text-foreground">
           {step.title}
         </h3>
 
-        {/* Description — expands on active */}
-        <div
-          className="overflow-hidden transition-all duration-700 ease-out"
-          style={{
-            maxHeight: isActive ? "120px" : "0px",
-            opacity: isActive ? 1 : 0,
-          }}
-        >
-          <p className="max-w-lg text-sm leading-relaxed text-[#5E6472]/70 sm:text-[15px]">
-            {step.desc}
-          </p>
-        </div>
-
-        {/* Bottom progress bar */}
-        <div className="flex items-center gap-3">
-          <div className="h-px flex-1 bg-foreground/[0.04]">
-            <div
-              className="h-full bg-foreground/15 transition-all duration-700"
-              style={{ width: isActive ? "100%" : "0%" }}
-            />
-          </div>
-          <span
-            className="text-[10px] tabular-nums transition-colors duration-500"
-            style={{
-              color: isActive
-                ? "hsl(var(--foreground) / 0.4)"
-                : "hsl(var(--foreground) / 0.1)",
-            }}
-          >
-            {step.id}/{String(steps.length).padStart(2, "0")}
-          </span>
-        </div>
+        {/* Description */}
+        <p className="text-[clamp(0.825rem,1.4vw,0.925rem)] leading-relaxed text-[#5E6472]/45 transition-colors duration-500 lg:ml-auto lg:max-w-xs lg:text-right lg:group-hover:text-[#5E6472]/65">
+          {step.desc}
+        </p>
       </div>
     </div>
   );
 }
 
-/* ─── Vertical timeline connector (desktop) ─── */
-
-function TimelineConnector({
-  visible,
-  progress,
-}: {
-  visible: boolean;
-  progress: number;
-}) {
-  return (
-    <div className="absolute bottom-0 left-12 top-0 hidden w-px lg:block" aria-hidden="true">
-      {/* Track */}
-      <div className="absolute inset-0 bg-foreground/[0.04]" />
-      {/* Fill */}
-      <div
-        className="absolute left-0 top-0 w-full origin-top bg-foreground/15 transition-all duration-700"
-        style={{
-          height: visible ? `${progress}%` : "0%",
-        }}
-      />
-      {/* Glow dot at current position */}
-      <div
-        className="absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-foreground/30 transition-all duration-700"
-        style={{
-          top: `${progress}%`,
-          opacity: visible ? 1 : 0,
-          boxShadow: "0 0 8px hsl(var(--foreground) / 0.15)",
-        }}
-      />
-    </div>
-  );
-}
-
-/* ─── Decorative background ─── */
-
-function ProcessDecoration() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-0 overflow-hidden"
-      aria-hidden="true"
-    >
-      {/* Thin horizontal scan lines */}
-      <svg
-        className="absolute inset-0 h-full w-full opacity-[0.012]"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern
-            id="process-lines"
-            width="100%"
-            height="4"
-            patternUnits="userSpaceOnUse"
-          >
-            <line
-              x1="0"
-              y1="0"
-              x2="100%"
-              y2="0"
-              stroke="currentColor"
-              strokeWidth="0.5"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#process-lines)" />
-      </svg>
-
-      {/* Radial fade */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,transparent_0%,hsl(var(--background))_100%)]" />
-
-      {/* Floating geometric accents — large screens */}
-      <div
-        className="animate-hero-float absolute left-[5%] top-[20%] hidden h-32 w-px bg-foreground/[0.03] lg:block"
-        style={{ animationDelay: "0.5s" }}
-      />
-      <div
-        className="animate-hero-float absolute bottom-[15%] right-[8%] hidden h-20 w-px bg-foreground/[0.025] lg:block"
-        style={{ animationDelay: "2.5s" }}
-      />
-      <div
-        className="animate-hero-float absolute right-[15%] top-[10%] hidden h-px w-16 bg-foreground/[0.03] lg:block"
-        style={{ animationDelay: "1.5s" }}
-      />
-      <div
-        className="animate-hero-float absolute bottom-[25%] left-[12%] hidden h-px w-10 bg-foreground/[0.02] lg:block"
-        style={{ animationDelay: "3.5s" }}
-      />
-    </div>
-  );
-}
-
-/* ─── Main component ─── */
+/* ─── Main ─── */
 
 export default function Process() {
-  const { ref, visible } = useInView(0.08);
-  const [activeStep, setActiveStep] = useState(0);
-
-  /* Auto-advance active step */
-  useEffect(() => {
-    if (!visible) return;
-
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [visible]);
-
-  const timelineProgress =
-    ((activeStep + 1) / steps.length) * 100;
+  const { ref, visible } = useReveal(0.1);
 
   return (
     <section
       ref={ref}
       id="proceso"
-      className="relative w-full overflow-hidden bg-background py-20 selection:bg-foreground/5 sm:py-28 lg:py-40"
+      className="relative w-full bg-background py-20 selection:bg-foreground/5 sm:py-28 lg:py-40"
     >
-      <ProcessDecoration />
+      <div className="mx-auto max-w-3xl px-5 sm:px-8 lg:px-6">
+        {/* ─── Header ─── */}
+        <div className="flex flex-col items-start gap-4 pb-10 sm:pb-14 lg:pb-16">
+          <span
+            className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#5E6472]/35"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(10px)",
+              transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+          >
+            Proceso
+          </span>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-6">
-        <div className="flex flex-col gap-14 sm:gap-16 lg:flex-row lg:gap-20 xl:gap-28">
-          {/* Left column: sticky header */}
-          <div className="lg:sticky lg:top-32 lg:w-[340px] lg:shrink-0 lg:self-start xl:w-[380px]">
-            <ProcessHeader visible={visible} />
+          <h2
+            className="text-[clamp(1.6rem,4.5vw,2.75rem)] font-medium leading-[1.1] tracking-tight text-foreground"
+            style={{
+              opacity: visible ? 1 : 0,
+              transform: visible ? "translateY(0)" : "translateY(16px)",
+              transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s",
+            }}
+          >
+            Cuatro pasos.
+            <br />
+            <span className="text-[#5E6472]/20">Sin ruido.</span>
+          </h2>
+        </div>
 
-            {/* Step indicator pills — desktop only */}
-            <div
-              className="mt-10 hidden flex-col gap-2 lg:flex"
-              style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(12px)",
-                transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s",
-              }}
-            >
-              {steps.map((step, i) => (
-                <button
-                  key={step.id}
-                  onClick={() => setActiveStep(i)}
-                  className="group/pill flex items-center gap-3 py-1.5 text-left transition-all duration-300"
-                >
-                  <div
-                    className="h-px transition-all duration-500"
-                    style={{
-                      width: activeStep === i ? "24px" : "12px",
-                      background:
-                        activeStep === i
-                          ? "hsl(var(--foreground) / 0.5)"
-                          : "hsl(var(--foreground) / 0.1)",
-                    }}
-                  />
-                  <span
-                    className="text-xs font-medium transition-colors duration-300"
-                    style={{
-                      color:
-                        activeStep === i
-                          ? "hsl(var(--foreground))"
-                          : "hsl(var(--muted-foreground) / 0.4)",
-                    }}
-                  >
-                    {step.keyword}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* ─── Steps ─── */}
+        <div className="flex flex-col">
+          {steps.map((step, i) => (
+            <StepRow key={step.id} step={step} index={i} visible={visible} />
+          ))}
 
-          {/* Right column: step cards with timeline */}
-          <div className="relative flex-1">
-            <TimelineConnector visible={visible} progress={timelineProgress} />
-
-            <div className="flex flex-col gap-4 sm:gap-5 lg:pl-8">
-              {steps.map((step, index) => (
-                <StepCard
-                  key={step.id}
-                  step={step}
-                  index={index}
-                  visible={visible}
-                  isActive={activeStep === index}
-                  onActivate={() => setActiveStep(index)}
-                />
-              ))}
-            </div>
-          </div>
+          {/* Closing divider */}
+          <div
+            className="h-px w-full origin-left bg-foreground/[0.06]"
+            style={{
+              transform: visible ? "scaleX(1)" : "scaleX(0)",
+              transition:
+                "transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s",
+            }}
+          />
         </div>
       </div>
     </section>

@@ -13,7 +13,6 @@ export default function Home() {
       <Header />
       <Hero />
       <Section2 />
-      <Section3 />
       <Section4 />
       <Section5 />
       <Footer />
