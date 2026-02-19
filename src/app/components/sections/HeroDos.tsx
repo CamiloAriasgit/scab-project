@@ -58,7 +58,6 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
                     <HeroHeading />
                     <HeroActions />
-                    <HeroImage />
                 </div>
 
             </div>
