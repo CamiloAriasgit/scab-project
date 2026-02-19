@@ -113,7 +113,7 @@ export default function Philosophy() {
   return (
     <section
       ref={ref}
-      id="explorar"
+      id="sistema"
       className="relative w-full overflow-hidden bg-background py-20 selection:bg-foreground/5 sm:py-28 lg:py-40"
     >
       {/* Subtle ambient glow */}

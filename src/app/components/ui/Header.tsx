@@ -7,23 +7,19 @@ import { useEffect, useState, useCallback } from "react";
 /*  Scroll-reactive header with morphing states + mobile drawer       */
 /* ------------------------------------------------------------------ */
 
-const NAV_ITEMS = ["Sistemas", "Proceso", "Contacto"] as const;
+const NAV_ITEMS = ["Sistema", "Proceso", "Contacto"] as const;
 
 function Logo() {
   return (
-    <a href="#" className="group flex items-center gap-2.5" aria-label="SCAB Systems home">
-      {/* Animated logo mark */}
-      <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-foreground transition-all duration-500 group-hover:rounded-xl">
-        <span className="text-[10px] font-bold tracking-widest text-background">S</span>
-        {/* Sweep shine */}
-        <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-background/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+    <a href="#" className="group flex items-center gap-1" aria-label="SCAB Systems home">
+      <div className="bg-foreground/60 w-[1px] h-5">
       </div>
       <div className="flex flex-col">
         <span className="text-[12px] font-bold leading-none tracking-[0.12em] text-foreground">
-          SCAB
+          Sebastian
         </span>
         <span className="pt-px text-[8px] font-medium uppercase leading-none tracking-[0.15em] text-muted-foreground/50">
-          Systems
+          Arias
         </span>
       </div>
     </a>
@@ -100,7 +96,7 @@ function MobileMenuButton({
   return (
     <button
       onClick={toggle}
-      className="relative flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-foreground/[0.04] md:hidden"
+      className="bg-white relative flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-foreground/[0.04] md:hidden"
       aria-label={isOpen ? "Close menu" : "Open menu"}
       aria-expanded={isOpen}
     >

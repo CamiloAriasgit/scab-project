@@ -1,52 +1,140 @@
 import { ArrowRight, MoveDown } from "lucide-react";
-import { SystemMockup } from "../ui/system-mockup";
+
+function StatusBadge() {
+  return (
+    <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full border border-foreground/[0.06] bg-background/80 px-3.5 py-1.5 backdrop-blur-sm">
+      <span className="relative flex h-2 w-2 items-center justify-center">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+      </span>
+      <span className="text-xs font-medium tracking-wide text-[#5E6472]">
+        Disponible para proyectos
+      </span>
+    </div>
+  );
+}
+
+function HeroHeading() {
+  return (
+    <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
+      <h1 className="text-balance text-center text-[clamp(2rem,6vw,4.5rem)] font-medium leading-[0.95] tracking-tight text-foreground">
+        Sistemas web
+        <br />
+        <span className="text-[#5E6472]">que escalan negocios.</span>
+      </h1>
+
+      <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
+        Diseno y desarrollo pensados para operar, medir y crecer con claridad.
+      </p>
+    </div>
+  );
+}
+
+function HeroActions() {
+  return (
+    <div className="animate-hero-fade-up-delay-2 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
+      <a
+        href="#contacto"
+        className="group relative flex h-12 w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-foreground text-sm font-semibold text-background transition-all duration-300 hover:shadow-xl hover:shadow-foreground/20 active:scale-[0.97] sm:h-14 sm:w-52 sm:text-[15px]"
+      >
+        <span className="relative z-10 flex items-center gap-2">
+          Empezar
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            strokeWidth={2}
+          />
+        </span>
+        <span className="absolute inset-0 -translate-x-full bg-foreground/80 transition-transform duration-500 group-hover:translate-x-0" />
+      </a>
+
+      <a
+        href="#sistema"
+        className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-foreground/[0.08] bg-secondary/50 text-sm font-medium text-[#5E6472] backdrop-blur-sm transition-all duration-300 hover:border-foreground/[0.15] hover:bg-secondary hover:text-foreground active:scale-[0.97] sm:h-14 sm:w-52 sm:text-[15px]"
+      >
+        Explorar mas
+        <MoveDown
+          className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1"
+          strokeWidth={1.5}
+        />
+      </a>
+    </div>
+  );
+}
+
+function MetricPill({
+  value,
+  label,
+}: {
+  value: string;
+  label: string;
+}) {
+  return (
+    <div className="flex items-center gap-2 text-xs text-[#5E6472] sm:text-sm">
+      <span className="font-semibold tabular-nums text-foreground">{value}</span>
+      <span className="text-[#5E6472]/60">{label}</span>
+    </div>
+  );
+}
+
+function HeroMetrics() {
+  return (
+    <div className="animate-hero-fade-up-delay-3 flex items-center gap-4 sm:gap-6">
+      <MetricPill value="+1" label="years" />
+      <span className="h-3 w-px bg-foreground/10" />
+      <MetricPill value="99%" label="uptime" />
+      <span className="h-3 w-px bg-foreground/10" />
+      <MetricPill value="4.9" label="rating" />
+    </div>
+  );
+}
+
+function DecorativeLine() {
+  return (
+    <div className="animate-hero-line mt-8 h-px w-32 origin-center bg-foreground/[0.06] sm:mt-12 sm:w-48 lg:mt-16 lg:w-64" />
+  );
+}
+
+function GridOverlay() {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      {/* Radial fade */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,transparent_0%,hsl(var(--background))_100%)]" />
+
+      {/* Grid lines */}
+      <svg className="absolute inset-0 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hero-grid" width="64" height="64" patternUnits="userSpaceOnUse">
+            <path d="M 64 0 L 0 0 0 64" fill="none" stroke="currentColor" strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-grid)" />
+      </svg>
+
+      {/* Corner accents — only on larger screens */}
+      <div className="absolute left-6 top-6 hidden h-16 w-px bg-foreground/[0.05] lg:block" />
+      <div className="absolute left-6 top-6 hidden h-px w-16 bg-foreground/[0.05] lg:block" />
+      <div className="absolute bottom-6 right-6 hidden h-16 w-px bg-foreground/[0.05] lg:block" />
+      <div className="absolute bottom-6 right-6 hidden h-px w-16 bg-foreground/[0.05] lg:block" />
+
+      {/* Floating accent dot */}
+      <div className="animate-hero-float absolute right-[15%] top-[20%] hidden h-1 w-1 rounded-full bg-foreground/10 lg:block" />
+      <div className="animate-hero-float absolute bottom-[25%] left-[12%] hidden h-1.5 w-1.5 rounded-full bg-foreground/[0.07] lg:block" style={{ animationDelay: "2s" }} />
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full bg-[#F6F8FB] flex flex-col justify-center selection:bg-[#0B0D12]/5 overflow-hidden">
-      
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-20 md:py-32">
-        {/* Grid de 12 columnas en desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* BLOQUE TEXTO: Título y Párrafo */}
-          <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 order-1">
-            <h1 className="text-[30px] sm:text-[40px] leading-[1] tracking-tight font-medium text-[#0B0D12] lg:text-6xl xl:text-7xl">
-              Sistemas web<br />
-              que escalan negocios.
-            </h1>
-            <p className="max-w-xl text-[13px] md:text-[18px] leading-relaxed text-[#5E6472] font-normal">
-              Diseño y desarrollo pensados para operar,<br className="hidden md:block" /> medir y crecer con claridad.
-            </p>
-          </div>
+    <section className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-background selection:bg-foreground/5">
+      <GridOverlay />
 
-          {/* BLOQUE MAQUETA: Aparece segundo en móvil */}
-          <div className="lg:col-span-6 w-full flex justify-center lg:justify-end order-2">
-            <div className="w-full max-w-[540px] lg:max-w-none">
-              <SystemMockup />
-            </div>
-          </div>
-
-          {/* BLOQUE BOTONES: Tercero en móvil (accesible al pulgar), 
-              en Desktop lo posicionamos visualmente bajo el texto mediante grid positioning o margen negativo */}
-          <div className="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start w-full max-w-md gap-3 order-3 lg:mt-[-40px]">
-            <a
-              href="#contacto"
-              className="group h-12 w-full sm:w-auto sm:px-10 flex items-center justify-center gap-2 rounded-xl bg-[#0B0D12] text-sm font-bold text-white transition-all hover:opacity-95 active:scale-[0.98]"
-            >
-              Empezar
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
-            </a>
-
-            <a
-              href="#Explorar"
-              className="group h-12 w-full sm:w-auto sm:px-10 flex items-center justify-center gap-2 rounded-xl border border-[#5E6472]/15 bg-white text-sm font-medium text-[#5E6472] transition-all hover:bg-[#0B0D12]/5 active:scale-[0.98]"
-            >
-              Explorar más
-              <MoveDown className="h-4 w-4 transition-transform group-hover:translate-y-1" strokeWidth={1.5} />
-            </a>
-          </div>
-
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-5 py-16 sm:px-8 sm:py-24 lg:px-6 lg:py-32">
+        <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
+          <StatusBadge />
+          <HeroHeading />
+          <HeroActions />
+          <HeroMetrics />
+          <DecorativeLine />
         </div>
       </div>
     </section>

@@ -75,17 +75,14 @@ export default function Footer() {
             >
               {/* Logo */}
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-background/[0.08] bg-background/[0.06]">
-                  <span className="text-[10px] font-bold tracking-widest text-background/80">
-                    S
-                  </span>
+                <div className="bg-[#5E6472] w-[1px] h-5">
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[12px] font-bold leading-none tracking-[0.12em] text-background/90">
-                    SCAB
+                    Sebastian
                   </span>
                   <span className="pt-px text-[8px] font-medium uppercase leading-none tracking-[0.15em] text-background/30">
-                    Systems
+                    Arias
                   </span>
                 </div>
               </div>
@@ -182,7 +179,7 @@ export default function Footer() {
           }}
         >
           <p className="text-[11px] text-background/15">
-            {CURRENT_YEAR} SCAB Systems. Todos los derechos reservados.
+            {CURRENT_YEAR} Sebastian Arias. Todos los derechos reservados.
           </p>
 
           <div className="flex items-center gap-6">

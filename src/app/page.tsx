@@ -1,23 +1,21 @@
-// src/app/page.tsx
-import Hero from './components/sections/Heroo'; // Importa tu componente Hero
-import Philosophy from './components/sections/Philosophy';
-import Section3 from './components/sections/Section3';
+import Hero from './components/sections/Hero';
+import Sistem from './components/sections/Sistem';
 import Process from './components/sections/Process';
 import CTA from './components/sections/CTA';
 import Footer from './components/ui/Footer';
 import Header from './components/ui/Header';
+import HeroDos from './components/sections/HeroDos';
 
 export default function Home() {
   return (
     <main>
       <Header />
+      <HeroDos/>
       <Hero />
-      <Philosophy />
+      <Sistem />
       <Process />
       <CTA />
-      <Footer />
-      {/* Aquí puedes añadir más secciones de tu página */}
-      
+      <Footer />      
     </main>
   );
 }
