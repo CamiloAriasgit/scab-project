@@ -19,7 +19,7 @@ function HeroActions() {
         <div className="flex flex-col items-center gap-4 sm:flex-row">
             <a
                 href="#contacto"
-                className="group relative flex h-13 items-center rounded-full bg-foreground/7 p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
+                className="group relative flex h-13 items-center rounded-full bg-foreground/4 p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
             >
                 {/* Texto */}
                 <span className="text-sm font-semibold text-foreground/80 sm:text-[15px]">
