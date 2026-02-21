@@ -11,9 +11,7 @@ const NAV_ITEMS = ["Sistema", "Proceso", "Contacto"] as const;
 
 function Logo() {
   return (
-    <a href="#" className="group flex items-center gap-1" aria-label="SCAB Systems home">
-      <div className="bg-foreground/60 w-[1px] h-5">
-      </div>
+    <a href="#" className="group flex items-center gap-1 pl-2" aria-label="SCAB Systems home">
       <div className="flex flex-col">
         <span className="text-[12px] font-bold leading-none tracking-[0.12em] text-foreground">
           Sebastian
@@ -273,7 +271,7 @@ export default function Header() {
 
           <div
             className={`flex items-center justify-between transition-all duration-700 ${
-              scrolled ? "h-12 px-4 md:px-5" : "h-14 px-5 md:h-16 md:px-6"
+              scrolled ? "h-12 px-2 md:px-2" : "h-14 px-5 md:h-16 md:px-6"
             }`}
           >
             <Logo />
