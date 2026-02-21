@@ -94,7 +94,7 @@ function MobileMenuButton({
   return (
     <button
       onClick={toggle}
-      className="bg-white relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-foreground/[0.04] md:hidden"
+      className="bg-foreground/4 relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-foreground/[0.04] md:hidden"
       aria-label={isOpen ? "Close menu" : "Open menu"}
       aria-expanded={isOpen}
     >
