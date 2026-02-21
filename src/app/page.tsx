@@ -11,7 +11,6 @@ export default function Home() {
     <main>
       <Header />
       <HeroDos/>
-      <Hero />
       <Sistem />
       <Process />
       <CTA />

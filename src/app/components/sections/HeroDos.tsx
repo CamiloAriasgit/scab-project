@@ -37,12 +37,12 @@ function HeroActions() {
 
 function HeroImage() {
     return (
-        <div className="w-full animate-hero-fade-up-delay-2 sm:mt-20 lg:mt-24">
-            <div className="relative mx-auto max-w-5xl bg-foreground/[0.02] shadow-2xl shadow-foreground/5 backdrop-blur-sm">
+        <div className="w-full animate-hero-fade-up-delay-2 sm:mt-0 lg:mt-0 sm:w-2xl">
+            <div className="relative mx-auto max-w-5xl backdrop-blur-sm">
                 <img 
-                    src="https://i.pinimg.com/originals/fa/d0/76/fad0765e22356db2fbbd98ea367e084e.jpg"
+                    src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8fde4e144311043.628a7dc434c08.png"
                     alt="Dashboard Preview" 
-                    className="h-auto w-full object-cover"
+                    className="h-auto w-full object-cover rounded-2xl shadow-2xl"
                 />
             </div>
         </div>
@@ -58,6 +58,7 @@ export default function Hero() {
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
                     <HeroHeading />
                     <HeroActions />
+                    <HeroImage />
                 </div>
 
             </div>

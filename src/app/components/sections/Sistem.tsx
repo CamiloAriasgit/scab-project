@@ -69,7 +69,7 @@ function FloatingCard({
 
   return (
     <div
-      className="group relative flex flex-col gap-6 rounded-2xl border border-foreground/[0.04] bg-background/60 p-6 backdrop-blur-md transition-all duration-700 sm:p-8 lg:hover:-translate-y-1 lg:hover:border-foreground/[0.08] lg:hover:shadow-xl lg:hover:shadow-foreground/[0.03]"
+      className="group relative flex flex-col gap-6 rounded-2xl border-white bg-background/60 p-6 backdrop-blur-md transition-all duration-700 sm:p-8 shadow- shadow-xl lg:hover:-translate-y-1 lg:hover:border-foreground/[0.08] lg:hover:shadow-xl lg:hover:shadow-foreground/[0.03]"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(32px)",
@@ -129,17 +129,6 @@ export default function Philosophy() {
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-6">
         {/* ─── Header ─── */}
         <div className="flex flex-col items-center gap-5 pb-14 text-center sm:pb-20 lg:pb-24">
-          <span
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/[0.06] bg-secondary/40 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#5E6472]/50 backdrop-blur-sm"
-            style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(12px)",
-              transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s",
-            }}
-          >
-            <span className="h-1 w-1 rounded-full bg-foreground/20" />
-            Sistema
-          </span>
 
           <h2
             className="text-balance text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground"

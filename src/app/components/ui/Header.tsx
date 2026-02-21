@@ -35,11 +35,11 @@ function DesktopNav({ activeSection }: { activeSection: string | null }) {
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="group relative flex h-9 items-center rounded-lg px-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300"
+            className="group relative flex h-9 items-center rounded-full px-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300"
           >
             {/* Background pill on hover/active */}
             <span
-              className={`absolute inset-0 rounded-lg transition-all duration-300 ${
+              className={`absolute inset-0 rounded-full transition-all duration-300 ${
                 isActive
                   ? "bg-foreground/[0.05]"
                   : "bg-transparent group-hover:bg-foreground/[0.03]"
@@ -69,7 +69,7 @@ function CTAButton({ compact }: { compact: boolean }) {
   return (
     <a
       href="#contacto"
-      className={`group relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-foreground font-medium text-background transition-all duration-500 active:scale-[0.97] ${
+      className={`group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-foreground/5 font-medium text-foreground transition-all duration-500 active:scale-[0.97] ${
         compact ? "h-9 px-4 text-[12px]" : "h-10 px-5 text-[13px]"
       }`}
     >
@@ -96,23 +96,23 @@ function MobileMenuButton({
   return (
     <button
       onClick={toggle}
-      className="bg-white relative flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-foreground/[0.04] md:hidden"
+      className="bg-white relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-foreground/[0.04] md:hidden"
       aria-label={isOpen ? "Close menu" : "Open menu"}
       aria-expanded={isOpen}
     >
       <div className="flex w-4 flex-col items-end gap-[5px]">
         <span
-          className={`block h-[1.5px] rounded-full bg-foreground transition-all duration-300 ${
+          className={`block h-[1.5px] rounded-full bg-foreground/70 transition-all duration-300 ${
             isOpen ? "w-4 translate-y-[6.5px] rotate-45" : "w-4"
           }`}
         />
         <span
-          className={`block h-[1.5px] rounded-full bg-foreground transition-all duration-300 ${
+          className={`block h-[1.5px] rounded-full bg-foreground/70 transition-all duration-300 ${
             isOpen ? "w-0 opacity-0" : "w-2.5"
           }`}
         />
         <span
-          className={`block h-[1.5px] rounded-full bg-foreground transition-all duration-300 ${
+          className={`block h-[1.5px] rounded-full bg-foreground/70 transition-all duration-300 ${
             isOpen ? "w-4 -translate-y-[6.5px] -rotate-45" : "w-3.5"
           }`}
         />
@@ -258,8 +258,8 @@ export default function Header() {
         <div
           className={`pointer-events-auto relative mx-auto overflow-hidden transition-all duration-700 ${
             scrolled
-              ? "max-w-3xl rounded-2xl border border-foreground/[0.06] bg-background/80 shadow-lg shadow-foreground/[0.06] backdrop-blur-xl"
-              : "max-w-5xl rounded-2xl border border-transparent bg-background/50 shadow-none backdrop-blur-sm"
+              ? "max-w-3xl rounded-full border border-foreground/[0.06] bg-background/60 backdrop-blur-xl"
+              : "max-w-5xl rounded-full border border-transparent bg-background/50 backdrop-blur-sm"
           }`}
         >
           {/* Subtle top border glow when scrolled */}
