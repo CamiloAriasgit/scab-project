@@ -22,9 +22,9 @@ const items = [
   },
   {
     index: "03",
-    label: "Agrega nuevos bloques sin rehacer el diseño",
+    label: "Amplía tu contenido sin romper el diseño",
     description:
-      "Expande tu sitio con nuevas secciones sin comprometer la estructura.",
+      "Añade nuevos servicios, preguntas o publicaciones dentro de una estructura pensada para mantener coherencia y orden.",
     icon: Plus,
   },
 ];
