@@ -1,31 +1,31 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Globe, SlidersHorizontal, BarChart3 } from "lucide-react";
+import { Globe, SlidersHorizontal, BarChart3, Pencil, Replace, Plus } from "lucide-react";
 
 /* ─── Data ─── */
 
 const items = [
   {
     index: "01",
-    label: "Editar Texto",
+    label: "Edita texto",
     description:
-      "Reemplaza y edit títuolos, descripciones",
-    icon: Globe,
+      "Actualiza títulos, descripciones y cualquier texto en tu sitio de forma rápida y sencilla.",
+    icon: Pencil,
   },
   {
     index: "02",
-    label: "Panel Editable",
+    label: "Reemplaza imágenes",
     description:
-      "Actualiza textos, secciones o contenidos sin depender del desarrollador.",
-    icon: SlidersHorizontal,
+      "Sustituye fotos y gráficos para mantener tu sitio siempre actualizado.",
+    icon: Replace,
   },
   {
     index: "03",
-    label: "Metricas Reales",
+    label: "Añade ítems",
     description:
-      "Configuracion de Google Tag Manager y GA4 desde tu propia cuenta. Control total sobre tus datos.",
-    icon: BarChart3,
+      "Agrega nuevos bloques, servicios o secciones sin necesidad de rehacer el diseño.",
+    icon: Plus,
   },
 ];
 
@@ -69,7 +69,7 @@ function FloatingCard({
 
   return (
     <div
-      className="group relative flex flex-col gap-6 rounded-2xl border-white bg-background/60 p-6 backdrop-blur-md transition-all duration-700 sm:p-8 shadow- shadow-xl lg:hover:-translate-y-1 lg:hover:border-foreground/[0.08] lg:hover:shadow-xl lg:hover:shadow-foreground/[0.03]"
+      className="group relative flex flex-col items-center gap-6 rounded-2xl border-white bg-background/60 p-6 backdrop-blur-md transition-all duration-700 sm:p-8 shadow- shadow-xl lg:hover:-translate-y-1 lg:hover:border-foreground/[0.08] lg:hover:shadow-xl lg:hover:shadow-foreground/[0.03]"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(32px)",
@@ -77,16 +77,11 @@ function FloatingCard({
       }}
     >
       {/* Top row: index + icon */}
-      <div className="flex items-start justify-between">
-        <span className="font-mono text-[11px] font-medium tracking-widest text-[#5E6472]/30">
-          {item.index}
-        </span>
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-foreground/[0.05] bg-secondary/50 transition-colors duration-500 lg:group-hover:border-foreground/[0.1] lg:group-hover:bg-secondary">
-          <Icon
-            className="h-[18px] w-[18px] text-[#5E6472]/50 transition-colors duration-500 lg:group-hover:text-foreground/70"
-            strokeWidth={1.5}
-          />
-        </div>
+      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 transition-colors duration-500 lg:group-hover:border-foreground/[0.1] lg:group-hover:bg-secondary">
+        <Icon
+          className="h-[18px] w-[18px] text-indigo-500 transition-colors duration-500 lg:group-hover:text-foreground/70"
+          strokeWidth={1.5}
+        />
       </div>
 
       {/* Label */}
@@ -95,12 +90,10 @@ function FloatingCard({
       </h3>
 
       {/* Description */}
-      <p className="text-[clamp(0.825rem,1.5vw,0.9rem)] leading-relaxed text-[#5E6472]/60 transition-colors duration-500 lg:group-hover:text-[#5E6472]/80">
+      <p className="text-[clamp(0.825rem,1.5vw,0.9rem)] text-center leading-relaxed text-[#5E6472]/60 transition-colors duration-500 lg:group-hover:text-[#5E6472]/80">
         {item.description}
       </p>
 
-      {/* Bottom accent line */}
-      <div className="mt-auto h-px w-0 bg-foreground/10 transition-all duration-700 lg:group-hover:w-full" />
     </div>
   );
 }
@@ -131,26 +124,15 @@ export default function Philosophy() {
         <div className="flex flex-col items-center gap-5 pb-14 text-center sm:pb-20 lg:pb-24">
 
           <h2
-            className="text-balance text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground"
+            className="text-balance text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/90"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
               transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s",
             }}
           >
-            Sistema Web Profesional
+            No es solo una web,<br />es control.
           </h2>
-
-          <p
-            className="max-w-md text-pretty text-[clamp(0.875rem,1.8vw,1.05rem)] leading-relaxed text-[#5E6472]"
-            style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(16px)",
-              transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
-            }}
-          >
-            No es solo una web, es control.
-          </p>
         </div>
 
         {/* ─── Cards grid ─── */}
@@ -174,19 +156,8 @@ export default function Philosophy() {
             transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s",
           }}
         >
-          <div
-            className="h-px w-12 origin-center bg-foreground/[0.06]"
-            style={{
-              transform: visible ? "scaleX(1)" : "scaleX(0)",
-              transition: "transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s",
-            }}
-          />
-          <p className="max-w-sm text-sm leading-relaxed text-[#5E6472]/40 sm:text-[15px]">
-            Tu web deja de ser un gasto.
-            <br />
-            <span className="text-foreground/50">
-              Se convierte en una herramienta de operacion.
-            </span>
+          <p className="max-w-sm text-sm leading-relaxed text-foreground/70 sm:text-[15px]">
+            Un sistema de edición privado, diseñado para que tu sitio evolucione contigo, sin depender de terceros.
           </p>
         </div>
       </div>
