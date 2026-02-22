@@ -8,23 +8,23 @@ import { Globe, SlidersHorizontal, BarChart3, Pencil, Replace, Plus } from "luci
 const items = [
   {
     index: "01",
-    label: "Edita texto",
+    label: "Edita tu contenido en segundos",
     description:
-      "Actualiza títulos, descripciones y cualquier texto en tu sitio de forma rápida y sencilla.",
+      "Actualiza títulos, textos y secciones desde tu panel privado, sin conocimientos técnicos.",
     icon: Pencil,
   },
   {
     index: "02",
-    label: "Reemplaza imágenes",
+    label: "Reemplaza imágenes al instante",
     description:
-      "Sustituye fotos y gráficos para mantener tu sitio siempre actualizado.",
+      "Mantén tu sitio actualizado cambiando fotos y gráficos cuando lo necesites.",
     icon: Replace,
   },
   {
     index: "03",
-    label: "Añade ítems",
+    label: "Agrega nuevos bloques sin rehacer el diseño",
     description:
-      "Agrega nuevos bloques, servicios o secciones sin necesidad de rehacer el diseño.",
+      "Expande tu sitio con nuevas secciones sin comprometer la estructura.",
     icon: Plus,
   },
 ];
@@ -79,13 +79,13 @@ function FloatingCard({
       {/* Top row: index + icon */}
       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 transition-colors duration-500 lg:group-hover:border-foreground/[0.1] lg:group-hover:bg-secondary">
         <Icon
-          className="h-[18px] w-[18px] text-indigo-500 transition-colors duration-500 lg:group-hover:text-foreground/70"
+          className="h-[18px] w-[18px] text-indigo-500 transition-colors duration-500 lg:group-hover:text-indigo-500/70"
           strokeWidth={1.5}
         />
       </div>
 
       {/* Label */}
-      <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-foreground">
+      <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-center text-foreground">
         {item.label}
       </h3>
 
@@ -121,7 +121,7 @@ export default function Philosophy() {
 
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-6">
         {/* ─── Header ─── */}
-        <div className="flex flex-col items-center gap-5 pb-14 text-center sm:pb-20 lg:pb-24">
+        <div className="flex flex-col items-center gap-5 pb-10 text-center sm:pb-20 lg:pb-20">
 
           <h2
             className="text-balance text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/90"
@@ -131,7 +131,7 @@ export default function Philosophy() {
               transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s",
             }}
           >
-            No es solo una web,<br />es control.
+            No es solo una web.<br />Es independencia.
           </h2>
         </div>
 
@@ -157,7 +157,7 @@ export default function Philosophy() {
           }}
         >
           <p className="max-w-sm text-sm leading-relaxed text-foreground/70 sm:text-[15px]">
-            Un sistema de edición privado, diseñado para que tu sitio evolucione contigo, sin depender de terceros.
+            Un sistema de edición privado, diseñado para que tu web evolucione contigo.
           </p>
         </div>
       </div>
