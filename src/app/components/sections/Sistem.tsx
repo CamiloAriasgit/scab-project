@@ -8,9 +8,9 @@ import { Globe, SlidersHorizontal, BarChart3 } from "lucide-react";
 const items = [
   {
     index: "01",
-    label: "Web Publica",
+    label: "Editar Texto",
     description:
-      "Tu negocio necesita una presencia clara, rapida y profesional. Optimizada para comunicar y convertir.",
+      "Reemplaza y edit títuolos, descripciones",
     icon: Globe,
   },
   {
@@ -142,18 +142,14 @@ export default function Philosophy() {
           </h2>
 
           <p
-            className="max-w-md text-pretty text-[clamp(0.875rem,1.8vw,1.05rem)] leading-relaxed text-[#5E6472]/50"
+            className="max-w-md text-pretty text-[clamp(0.875rem,1.8vw,1.05rem)] leading-relaxed text-[#5E6472]"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(16px)",
               transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s",
             }}
           >
-            No es solo una web.
-            <br />
-            <span className="text-foreground/70">
-              Es presencia publica + control + metricas reales.
-            </span>
+            No es solo una web, es control.
           </p>
         </div>
 

@@ -71,7 +71,7 @@ function CTAButton({ compact }: { compact: boolean }) {
         compact ? "h-9 px-4 text-[12px]" : "h-10 px-5 text-[13px]"
       }`}
     >
-      <span className="relative z-10 flex items-center gap-1.5">
+      <span className="relative z-10 flex items-center justify-center gap-1.5 ">
         Comenzar
         <ArrowUpRight
           className="h-3 w-3 transition-transform duration-300 group-hover:-translate-y-px group-hover:translate-x-px"
@@ -145,7 +145,7 @@ function MobileDrawer({
             : "-translate-y-4 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="overflow-hidden rounded-2xl border border-foreground/[0.06] bg-background/95 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
+        <div className="overflow-hidden rounded-3xl border border-foreground/[0.06] bg-background/95 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
           {/* Drawer header */}
           <div className="flex h-14 items-center justify-between px-5">
             <Logo />
@@ -168,7 +168,7 @@ function MobileDrawer({
                 }}
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground/[0.04]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground/4">
                     <span className="text-[10px] font-bold tabular-nums text-muted-foreground/60">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -188,7 +188,7 @@ function MobileDrawer({
             <a
               href="#contacto"
               onClick={onClose}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-foreground text-sm font-semibold text-background transition-all active:scale-[0.98]"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground/4 text-sm font-semibold text-foreground transition-all active:scale-[0.98]"
             >
               Comenzar proyecto
               <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
