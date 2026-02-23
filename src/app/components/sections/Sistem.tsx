@@ -140,12 +140,12 @@ function FloatingCard({
       <VisualAnimation index={item.index} />
 
       {/* Row: index + icon */}
-      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 transition-colors duration-500 lg:group-hover:bg-indigo-500/20">
+      {/*<div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 transition-colors duration-500 lg:group-hover:bg-indigo-500/20">
         <Icon
           className="h-[18px] w-[18px] text-indigo-500 transition-colors duration-500"
           strokeWidth={1.5}
         />
-      </div>
+      </div>*/}
 
       {/* Label */}
       <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-center text-foreground/80">
