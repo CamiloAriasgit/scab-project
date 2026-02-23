@@ -85,12 +85,12 @@ function FloatingCard({
       </div>
 
       {/* Label */}
-      <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-center text-foreground">
+      <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-center text-foreground/80">
         {item.label}
       </h3>
 
       {/* Description */}
-      <p className="text-[clamp(0.825rem,1.5vw,0.9rem)] text-center leading-relaxed text-[#5E6472]/60 transition-colors duration-500 lg:group-hover:text-[#5E6472]/80">
+      <p className="text-[clamp(0.825rem,1.5vw,0.9rem)] text-center leading-relaxed text-[#5E6472]/70 transition-colors duration-500 lg:group-hover:text-[#5E6472]/80">
         {item.description}
       </p>
 
