@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+// Ya no necesitamos los iconos de lucide-react para las tarjetas con animaciones,
+// pero los mantengo si aún los usas en otro lugar o como fallback.
 import { Pencil, Replace, Plus } from "lucide-react";
 
 /* ─── Data ─── */
@@ -11,83 +13,29 @@ const items = [
     label: "Edita tu contenido en segundos",
     description:
       "Actualiza títulos, textos y secciones desde tu panel privado, sin conocimientos técnicos.",
-    icon: Pencil,
+    animationType: "text-typing", // Identificador para el tipo de animación
   },
   {
     index: "02",
     label: "Reemplaza imágenes al instante",
     description:
       "Mantén tu sitio actualizado cambiando fotos y gráficos cuando lo necesites.",
-    icon: Replace,
+    animationType: "image-stack", // Identificador para el tipo de animación
+    // Array de URLs de imágenes para la animación de stack
+    images: [
+      "https://www.wsupercars.com/thumbnails/McLaren/2011-McLaren-MP4-12C-001.jpg", // ¡Reemplaza con tus URLs reales!
+      "https://th.bing.com/th/id/R.46d2da2e0a566b1f95f9af5c3369da62?rik=iTHNVRL4ZDEfzQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f-j7Z7A3j6qfM%2fUkg5wQHFN7I%2fAAAAAAAABK4%2fYGoEUNcBIuU%2fs1600%2fimagenes%2ben%2bHD%2b(171).jpg&ehk=uVHC%2bAVv0zFoDHJP%2bVU3WLerbBC8CbclTiWMsI4%2f3RQ%3d&risl=&pid=ImgRaw&r=0",
+      "https://wallpaperaccess.com/full/1749489.jpg",
+    ],
   },
   {
     index: "03",
     label: "Amplía tu contenido sin romper el diseño",
     description:
       "Añade nuevos servicios, preguntas o publicaciones dentro de una estructura pensada para mantener coherencia y orden.",
-    icon: Plus,
+    animationType: "dynamic-grid", // Identificador para el tipo de animación
   },
 ];
-
-/* ─── Visual Animations ─── */
-
-const VisualAnimation = ({ index }: { index: string }) => {
-  if (index === "01") {
-    return (
-      <div className="relative mb-4 flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-indigo-500/5 border border-indigo-500/10">
-        <div className="flex flex-col gap-2 w-1/2">
-          <div className="h-2 w-full overflow-hidden rounded-full bg-indigo-500/20">
-            <div className="h-full w-full origin-left animate-[edit-line_3s_infinite] bg-indigo-500/40" />
-          </div>
-          <div className="h-2 w-2/3 overflow-hidden rounded-full bg-indigo-500/10">
-            <div className="h-full w-full origin-left animate-[edit-line_3s_infinite_0.5s] bg-indigo-500/30" />
-          </div>
-        </div>
-        <style jsx>{`
-          @keyframes edit-line {
-            0% { transform: scaleX(0); opacity: 0; }
-            30% { transform: scaleX(1); opacity: 1; }
-            70% { transform: scaleX(1); opacity: 1; }
-            100% { transform: scaleX(1); opacity: 0; }
-          }
-        `}</style>
-      </div>
-    );
-  }
-
-  if (index === "02") {
-    return (
-      <div className="relative mb-4 flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-indigo-500/5 border border-indigo-500/10">
-        <div className="relative h-12 w-16 rounded-md border-2 border-indigo-500/20 bg-indigo-500/5 overflow-hidden">
-          {/* Placeholder para la URL de la imagen si se desea: <img src="" /> */}
-          <div className="absolute inset-0 flex items-center justify-center">
-             <div className="h-8 w-10 animate-pulse rounded bg-indigo-500/20" />
-          </div>
-          <div className="absolute -bottom-1 -right-1 h-6 w-6 animate-bounce rounded-full bg-indigo-500 shadow-lg flex items-center justify-center">
-            <Replace className="h-3 w-3 text-white" />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative mb-4 flex h-24 w-full items-center justify-center overflow-hidden rounded-xl bg-indigo-500/5 border border-indigo-500/10">
-      <div className="grid grid-cols-2 gap-2 w-20">
-        <div className="h-6 w-full rounded bg-indigo-500/20" />
-        <div className="h-6 w-full rounded bg-indigo-500/20" />
-        <div className="col-span-2 h-6 w-full animate-[expand-box_4s_infinite] rounded border-2 border-dashed border-indigo-500/40 bg-indigo-500/5" />
-      </div>
-      <style jsx>{`
-        @keyframes expand-box {
-          0%, 10% { transform: scale(0.8); opacity: 0; }
-          30%, 80% { transform: scale(1); opacity: 1; }
-          100% { transform: scale(1.1); opacity: 0; }
-        }
-      `}</style>
-    </div>
-  );
-};
 
 /* ─── Scroll reveal hook ─── */
 
@@ -114,6 +62,157 @@ function useReveal(threshold = 0.15) {
   return { ref, visible };
 }
 
+/* ─── Animaciones específicas para cada tarjeta ─── */
+
+// Animación de Texto Escribiéndose y Reemplazándose
+function TextTypingAnimation() {
+  const textOptions = ["Edita tu web", "Actualiza ofertas", "Desde tu móvil"];
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const typingSpeed = 100; // ms por carácter
+  const deletingSpeed = 60; // ms por carácter
+  const pauseBeforeDelete = 1500; // ms de pausa antes de borrar
+  const pauseBeforeType = 500; // ms de pausa antes de escribir
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    const handleTyping = () => {
+      const fullText = textOptions[currentTextIndex];
+      if (isDeleting) {
+        setDisplayedText(fullText.substring(0, displayedText.length - 1));
+        if (displayedText.length === 0) {
+          setIsDeleting(false);
+          setCurrentTextIndex((prev) => (prev + 1) % textOptions.length);
+        }
+      } else {
+        setDisplayedText(fullText.substring(0, displayedText.length + 1));
+        if (displayedText.length === fullText.length) {
+          timer = setTimeout(() => setIsDeleting(true), pauseBeforeDelete);
+          return; // Detener el typing hasta que empiece la eliminación
+        }
+      }
+      timer = setTimeout(
+        handleTyping,
+        isDeleting ? deletingSpeed : typingSpeed
+      );
+    };
+
+    timer = setTimeout(
+      handleTyping,
+      isDeleting ? deletingSpeed : typingSpeed
+    );
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, currentTextIndex, textOptions]);
+
+  return (
+    <div className="relative h-28 w-full flex items-center justify-center p-4">
+      <div className="relative h-full w-full max-w-xs overflow-hidden rounded-lg bg-white/5 shadow-xl flex items-center justify-center p-4">
+        <span className="text-xl font-bold text-foreground/50 whitespace-nowrap overflow-hidden">
+          {displayedText}
+          <span className="animate-blink inline-block w-[2px] h-6 bg-foreground ml-1"></span>
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// Animación de Stack de Imágenes (tipo carrusel de cartas)
+function ImageStackAnimation({ images }: { images: string[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Cambia la imagen cada 3 segundos
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative h-28 w-full flex items-center justify-center p-4">
+      <div className="relative h-full w-full max-w-xs flex items-center justify-center">
+        {images.map((src, i) => (
+          <div
+            key={src}
+            className={`absolute h-24 w-40 sm:h-28 sm:w-48 rounded-lg shadow-md overflow-hidden bg-gray-200 transition-all duration-700 ease-in-out
+              ${
+                i === currentIndex
+                  ? "z-20 scale-105 rotate-0"
+                  : i === (currentIndex + 1) % images.length
+                  ? "z-10 scale-95 rotate-[-5deg] translate-x-[-20%] opacity-70"
+                  : i === (currentIndex + 2) % images.length
+                  ? "z-0 scale-90 rotate-[5deg] translate-x-[20%] opacity-50"
+                  : "opacity-0" // Oculta el resto
+              }
+            `}
+            style={{
+              backgroundImage: `url(${src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+// Animación de Grid Dinámico (Crecimiento de bloques)
+function DynamicGridAnimation() {
+  const [blocks, setBlocks] = useState([1, 2, 3]); // Bloques iniciales
+  const [isAdding, setIsAdding] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (!isAdding) {
+      timer = setTimeout(() => {
+        setIsAdding(true);
+        setBlocks([1, 2, 3, 4]);
+      }, 2000); // Espera 2 segundos antes de añadir
+    } else {
+      timer = setTimeout(() => {
+        setIsAdding(false);
+        setBlocks([1, 2, 3]); // Vuelve al estado inicial
+      }, 3000); // Muestra el nuevo bloque por 3 segundos
+    }
+    return () => clearTimeout(timer);
+  }, [isAdding]);
+
+  return (
+    <div className="relative h-28 w-full flex items-center justify-center p-4">
+      <div className="relative h-full w-full max-w-xs flex items-center justify-center gap-2 rounded-lg bg-white/5 border border-white/10 p-2">
+        {blocks.map((block, i) => (
+          <div
+            key={block}
+            className={`h-10 rounded-md bg-indigo-500 transition-all duration-700 ease-out
+              ${
+                i === 0 || i === 3 ? "w-10" : "w-16" // Simula diferentes tamaños de bloque
+              }
+              ${
+                isAdding && i === 3 // Si es el bloque nuevo y estamos añadiendo
+                  ? "opacity-100 scale-100"
+                  : isAdding // Si estamos en el estado de añadir (y no es el nuevo bloque)
+                  ? "opacity-100 scale-100"
+                  : !isAdding && i === 3 // Si estamos volviendo al estado inicial y es el bloque extra
+                  ? "opacity-0 scale-0"
+                  : "opacity-100 scale-100" // El resto de bloques normales
+              }
+            `}
+            style={{
+                // Ajuste para el cuarto bloque para que "aparezca" sin romper el layout en la primera fila
+                gridColumn: i === 3 ? 'span 2' : 'auto',
+                width: i === 3 && isAdding ? 'calc(50% - 4px)' : (i === 0 || i === 3 ? '40%' : '58%'), // Ajuste de ancho para simular la redistribución
+            }}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 /* ─── Floating Card ─── */
 
 function FloatingCard({
@@ -125,27 +224,39 @@ function FloatingCard({
   visible: boolean;
   delay: number;
 }) {
-  const Icon = item.icon;
+  const AnimationComponent =
+    item.animationType === "text-typing"
+      ? TextTypingAnimation
+      : item.animationType === "image-stack"
+      ? ImageStackAnimation
+      : item.animationType === "dynamic-grid"
+      ? DynamicGridAnimation
+      : null;
 
   return (
     <div
-      className="group relative flex flex-col items-center gap-6 rounded-2xl border border-transparent bg-background/60 p-6 backdrop-blur-md transition-all duration-700 sm:p-8 shadow-xl lg:hover:-translate-y-1 lg:hover:border-indigo-500/20 lg:hover:shadow-indigo-500/5"
+      className="group relative flex flex-col items-center gap-6 rounded-2xl border border-white/10 bg-white p-6 backdrop-blur-md transition-all duration-700 sm:p-8 lg:hover:-translate-y-1 lg:hover:border-foreground/[0.08] lg:hover:shadow-xl lg:hover:shadow-foreground/[0.03]"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(32px)",
         transition: `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
       }}
     >
-      {/* Visual Animation Component */}
-      <VisualAnimation index={item.index} />
-
-      {/* Row: index + icon */}
-      {/*<div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/10 transition-colors duration-500 lg:group-hover:bg-indigo-500/20">
-        <Icon
-          className="h-[18px] w-[18px] text-indigo-500 transition-colors duration-500"
-          strokeWidth={1.5}
-        />
-      </div>*/}
+      {/* Zona de la animación */}
+      <div className="flex h-28 w-full items-center justify-center">
+        {AnimationComponent && item.animationType === "image-stack" ? (
+          <ImageStackAnimation images={item.images || []} />
+        ) : AnimationComponent ? (
+          <AnimationComponent />
+        ) : (
+          // Fallback o un icono si no hay animación
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-indigo-500/10">
+            {item.animationType === "text-typing" && <Pencil className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
+            {item.animationType === "image-stack" && <Replace className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
+            {item.animationType === "dynamic-grid" && <Plus className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
+          </div>
+        )}
+      </div>
 
       {/* Label */}
       <h3 className="text-[clamp(1.1rem,2.5vw,1.35rem)] font-medium leading-tight tracking-tight text-center text-foreground/80">
@@ -171,6 +282,7 @@ export default function Sistem() {
       id="sistema"
       className="relative w-full overflow-hidden bg-background py-20 selection:bg-foreground/5 sm:py-28 lg:py-40"
     >
+      {/* Subtle ambient glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[600px] w-[900px] rounded-full opacity-[0.025]"
         style={{
@@ -181,6 +293,7 @@ export default function Sistem() {
       />
 
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8 lg:px-6">
+        {/* ─── Header ─── */}
         <div className="flex flex-col items-center gap-5 pb-10 text-center sm:pb-20 lg:pb-20">
           <h2
             className="text-balance text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/90"
@@ -194,6 +307,7 @@ export default function Sistem() {
           </h2>
         </div>
 
+        {/* ─── Cards grid ─── */}
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-3 lg:gap-5">
           {items.map((item, i) => (
             <FloatingCard
@@ -205,6 +319,7 @@ export default function Sistem() {
           ))}
         </div>
 
+        {/* ─── Closing ─── */}
         <div
           className="flex flex-col items-center gap-4 pt-14 text-center sm:pt-20 lg:pt-24"
           style={{
