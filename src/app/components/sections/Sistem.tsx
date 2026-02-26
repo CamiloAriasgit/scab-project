@@ -224,14 +224,27 @@ function FloatingCard({
   visible: boolean;
   delay: number;
 }) {
-  const AnimationComponent =
-    item.animationType === "text-typing"
-      ? TextTypingAnimation
-      : item.animationType === "image-stack"
-      ? ImageStackAnimation
-      : item.animationType === "dynamic-grid"
-      ? DynamicGridAnimation
-      : null;
+  
+  // 1. Definimos una función de renderizado interna para evitar el conflicto de tipos
+  const renderAnimation = () => {
+    switch (item.animationType) {
+      case "text-typing":
+        return <TextTypingAnimation />;
+      case "image-stack":
+        // Aquí TypeScript sabe que item tiene images si es "image-stack"
+        return <ImageStackAnimation images={item.images || []} />;
+      case "dynamic-grid":
+        return <DynamicGridAnimation />;
+      default:
+        return (
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-indigo-500/10">
+            {item.animationType === "text-typing" && <Pencil className="h-[18px] w-[18px] text-indigo-500" />}
+            {item.animationType === "image-stack" && <Replace className="h-[18px] w-[18px] text-indigo-500" />}
+            {item.animationType === "dynamic-grid" && <Plus className="h-[18px] w-[18px] text-indigo-500" />}
+          </div>
+        );
+    }
+  };
 
   return (
     <div
@@ -244,18 +257,7 @@ function FloatingCard({
     >
       {/* Zona de la animación */}
       <div className="flex h-28 w-full items-center justify-center">
-        {AnimationComponent && item.animationType === "image-stack" ? (
-          <ImageStackAnimation images={item.images || []} />
-        ) : AnimationComponent ? (
-          <AnimationComponent />
-        ) : (
-          // Fallback o un icono si no hay animación
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-indigo-500/10">
-            {item.animationType === "text-typing" && <Pencil className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
-            {item.animationType === "image-stack" && <Replace className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
-            {item.animationType === "dynamic-grid" && <Plus className="h-[18px] w-[18px] text-indigo-500" strokeWidth={1.5} />}
-          </div>
-        )}
+        {renderAnimation()}
       </div>
 
       {/* Label */}
