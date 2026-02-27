@@ -4,12 +4,12 @@ function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-[clamp(2rem,6vw,4.5rem)] font-medium leading-[0.95] tracking-tight text-foreground/90">
-                Tu web bajo tu control desde cualquier lugar.
+                Actualiza en segundos sin procesos técnicos.
             </h1>
 
             <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
-                No importa si estás en la oficina, en casa o en movimiento.
-                Tu panel privado está optimizado para funcionar en cualquier dispositivo.
+                Cambia textos, publica novedades o reemplaza imágenes sin tocar el diseño.
+                Tu sistema está pensado para que el contenido fluya, no para complicarte.
             </p>
         </div>
     );
@@ -38,7 +38,7 @@ export default function Mobile() {
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
                     <HeroHeading />
                     <MockUpImage />
-                    <span className="text-pretty text-center text-sm leading-relaxed text-foreground/50">Independencia no es editar. Es no depender de nadie para hacerlo.</span>
+                    <span className="text-pretty text-center text-sm leading-relaxed text-foreground/50">Más acción. Menos espera.</span>
                 </div>
 
             </div>
