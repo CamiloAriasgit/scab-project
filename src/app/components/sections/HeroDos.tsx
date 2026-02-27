@@ -3,17 +3,31 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import HeroDashboard from '../../../../public/images/HeroDashboard.jpg';
 
+function StatusBadge() {
+  return (
+    <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full border border-foreground/[0.06] bg-background/80 px-3.5 py-1.5 backdrop-blur-sm">
+      <span className="relative flex h-2 w-2 items-center justify-center">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+      </span>
+      <span className="text-xs font-medium tracking-wide text-[#5E6472]">
+        Disponible para proyectos
+      </span>
+    </div>
+  );
+}
+
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-5xl lg:text-8xl font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
                 Control total sobre tu sitio web.
             </h1>
 
-            {/*<p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
+            <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
                 Diseño profesional con sistema de edición privado.
                 Actualiza tu contenido cuando quieras, sin depender de terceros.
-            </p>*/}
+            </p>
         </div>
     );
 }
@@ -53,9 +67,10 @@ export default function Hero() {
     return (
         <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5">
             {/* Contenedor Principal: Aumentamos el padding top para dar aire ... flex min-h-svh*/}
-            <div className="relative z-10 mx-auto flex w-full flex-col items-center px-5 pt-20 sm:px-8 sm:pt-32 lg:px-6">
+            <div className="relative mx-auto flex w-full flex-col items-center px-5 pt-20 sm:px-8 sm:pt-32 lg:px-6">
 
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
+                    <StatusBadge />
                     <HeroHeading />
                     <HeroActions />
                     <HeroImage />
