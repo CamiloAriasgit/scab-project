@@ -42,7 +42,7 @@ function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
-                Toma el control de tu sitio web
+                No es solo una web.<br />Es independencia digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
     );
