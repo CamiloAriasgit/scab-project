@@ -41,7 +41,7 @@ function StatusBadge() {
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-4xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
                 No es solo una web.<br />Es independencia digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
@@ -50,7 +50,7 @@ function HeroHeading() {
 
 function HeroActions() {
     return (
-        <div className="flex flex-col items-center gap-4 sm:flex-row">
+        <div className="flex flex-col items-center gap-4 sm:flex-row mb-10">
             <a
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
