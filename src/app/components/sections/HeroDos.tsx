@@ -1,7 +1,8 @@
 import { div } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import HeroDashboard from '../../../../public/images/HeroDashboard.jpg';
+import HeroDashboard from '../../../../public/images/2.jpg';
+import InterfaceMockup from "../ui/InterfaceMockup";
 
 function StatusBadge() {
   return (
@@ -24,17 +25,17 @@ function HeroHeading() {
                 Control total sobre tu sitio web.
             </h1>
 
-            <p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
+            {/*<p className="max-w-xs text-pretty text-center text-sm leading-relaxed text-[#5E6472] sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
                 Diseño profesional con sistema de edición privado.
                 Actualiza tu contenido cuando quieras, sin depender de terceros.
-            </p>
+            </p>*/}
         </div>
     );
 }
 
 function HeroActions() {
     return (
-        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mb-10">
+        <div className="flex flex-col items-center gap-4 sm:flex-row">
             <a
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground/4 p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
