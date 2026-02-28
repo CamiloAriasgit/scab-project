@@ -1,36 +1,36 @@
 import { div } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import HeroDashboard from '../../../../public/images/HeroImg.png';
+import HeroDashboard from '../../../../public/images/MobileHero.png';
 import InterfaceMockup from "../ui/InterfaceMockup";
 
 function StatusBadge() {
     return (
         <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-500/0 via-indigo-500/0 to-emerald-500/0 px-3.5 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-2 w-2 items-center justify-center">
-  {/* Onda 1: Inicia inmediato */}
-  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-r from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" />
-  
-  {/* Onda 2: Retraso de 0.2s */}
-  <span 
-    style={{ animationDelay: '0.2s' }} 
-    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-b from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
-  />
-  
-  {/* Onda 3: Retraso de 0.4s */}
-  <span 
-    style={{ animationDelay: '0.4s' }} 
-    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-br from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
-  />
-  
-  {/* Onda 4: Retraso de 0.6s */}
-  <span 
-    style={{ animationDelay: '0.6s' }} 
-    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-bl from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
-  />
-  
-  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500/0" />
-</span>
+                {/* Onda 1: Inicia inmediato */}
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-r from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" />
+
+                {/* Onda 2: Retraso de 0.2s */}
+                <span
+                    style={{ animationDelay: '0.2s' }}
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-b from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                />
+
+                {/* Onda 3: Retraso de 0.4s */}
+                <span
+                    style={{ animationDelay: '0.4s' }}
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-br from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                />
+
+                {/* Onda 4: Retraso de 0.6s */}
+                <span
+                    style={{ animationDelay: '0.6s' }}
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-bl from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                />
+
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500/0" />
+            </span>
             <span className="text-xs font-medium tracking-wide text-[#5E6472]">
                 Disponible para proyectos
             </span>
@@ -42,8 +42,8 @@ function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
-                Control total sobre tu sitio web.
-            </h1>
+                Toma el control de tu sitio web
+            </h1> {/*Control total sobre tu sitio web.*/}
         </div>
     );
 }
@@ -68,11 +68,21 @@ function HeroActions() {
 
 function HeroImage() {
     return (
-        <Image
-            src={HeroDashboard}
-            alt="Dashboard Preview"
-            className="h-auto w-3/4 object-cover lg:w-3/5"
-        />
+        <div className="relative w-full lg:w-3/5">
+            {/* La Imagen */}
+            <Image
+                src={HeroDashboard}
+                alt="A mobile interface preview"
+                className="h-auto w-full object-cover"
+            />
+
+            {/* El Contenedor del Texto */}
+            <div className="absolute inset-0 flex mt-10 flex-col items-center justify-center">
+                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400">
+                    Hola, Name!
+                </h2>
+            </div>
+        </div>
     );
 }
 
