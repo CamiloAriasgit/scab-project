@@ -6,11 +6,31 @@ import InterfaceMockup from "../ui/InterfaceMockup";
 
 function StatusBadge() {
     return (
-        <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full border border-foreground/[0.06] bg-background/80 px-3.5 py-1.5 backdrop-blur-sm">
+        <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-500/0 via-indigo-500/0 to-emerald-500/0 px-3.5 py-1.5 backdrop-blur-sm">
             <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            </span>
+  {/* Onda 1: Inicia inmediato */}
+  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-r from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" />
+  
+  {/* Onda 2: Retraso de 0.2s */}
+  <span 
+    style={{ animationDelay: '0.2s' }} 
+    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-b from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
+  />
+  
+  {/* Onda 3: Retraso de 0.4s */}
+  <span 
+    style={{ animationDelay: '0.4s' }} 
+    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-br from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
+  />
+  
+  {/* Onda 4: Retraso de 0.6s */}
+  <span 
+    style={{ animationDelay: '0.6s' }} 
+    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-bl from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" 
+  />
+  
+  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500/0" />
+</span>
             <span className="text-xs font-medium tracking-wide text-[#5E6472]">
                 Disponible para proyectos
             </span>
@@ -33,12 +53,12 @@ function HeroActions() {
         <div className="flex flex-col items-center gap-4 sm:flex-row">
             <a
                 href="#contacto"
-                className="group relative flex h-13 items-center rounded-full bg-background/80 p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
+                className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
             >
-                <span className="text-sm font-semibold text-foreground/80 sm:text-[15px]">
+                <span className="text-sm font-semibold text-background/80 sm:text-[15px]">
                     Empezar
                 </span>
-                <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white transition-transform duration-300 group-hover:translate-x-0.5">
+                <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-background text-black transition-transform duration-300 group-hover:translate-x-0.5">
                     <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
                 </div>
             </a>
