@@ -68,7 +68,7 @@ function CTAButton({ compact }: { compact: boolean }) {
     <a
       href="#contacto"
       className={`group relative flex items-center justify-center gap-2 overflow-hidden rounded-full font-medium transition-all duration-500 active:scale-[0.97] ${
-        compact ? "h-9 px-4 text-[12px] bg-indigo-500 text-background" : "h-10 px-5 text-[13px] bg-foreground/5 text-foreground/80"
+        compact ? "h-9 px-4 text-[12px] bg-foreground text-background" : "h-10 px-5 text-[13px] bg-foreground/5 text-foreground/80"
       }`}
     >
       <span className="relative z-10 flex items-center justify-center gap-1.5 ">
