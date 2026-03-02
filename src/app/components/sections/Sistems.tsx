@@ -65,7 +65,10 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
         </span>
       </div>
       <p className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
-        Edita textos en segundos desde tu panel privado.
+        <span className="bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+          Edita textos en segundos
+        </span>{" "}
+        desde tu panel privado.
       </p>
     </div>
   </AppleCard>

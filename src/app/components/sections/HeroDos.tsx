@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import HeroDashboard from '../../../../public/images/MobileHero.png';
+import HeroDashboard from '../../../../public/images/3.png';
 
 function StatusBadge() {
     return (
@@ -64,7 +64,7 @@ function HeroActions() {
 function HeroImage() {
 
     return (
-        <div className="relative w-full lg:w-3/5">
+        <div className="relative w-full lg:w-2/5">
             <Image
                 src={HeroDashboard}
                 alt="A mobile interface preview"
@@ -94,8 +94,8 @@ export default function Hero() {
                     <StatusBadge />
                     <HeroHeading />
                     <HeroActions />
-                    <HeroImage />
                 </div>
+                <HeroImage />
             </div>
         </section>
     );
