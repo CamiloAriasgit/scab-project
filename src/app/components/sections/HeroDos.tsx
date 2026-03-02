@@ -35,7 +35,7 @@ function StatusBadge() {
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-4xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-4xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90 letter-spacing: -0.02em;">
                 No es solo una web.<br />Es independencia digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
@@ -49,7 +49,7 @@ function HeroActions() {
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
             >
-                <span className="text-sm font-semibold text-background/80 sm:text-[15px]">
+                <span className="text-sm font-semibold text-background sm:text-[15px]">
                     Empezar
                 </span>
                 <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-background text-black transition-transform duration-300 group-hover:translate-x-0.5">
@@ -76,7 +76,7 @@ function HeroImage() {
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
             {/* Fondo de gradientes fríos estilo Apple */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
                 {/* Círculo Azul (Fondo Izquierda) */}
