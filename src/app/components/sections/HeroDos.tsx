@@ -35,7 +35,7 @@ function StatusBadge() {
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-4xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
                 No es solo una web.<br />Es independencia digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
@@ -60,17 +60,8 @@ function HeroActions() {
     );
 }
 
-const phrases = ["Edita texto", "Reemplaza imágenes", "Añade items"];
 
 function HeroImage() {
-    const [index, setIndex] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-        }, 4000); // 4 segundos para una lectura pausada
-        return () => clearInterval(timer);
-    }, []);
 
     return (
         <div className="relative w-full lg:w-3/5">
@@ -79,29 +70,6 @@ function HeroImage() {
                 alt="A mobile interface preview"
                 className="h-auto w-full object-cover"
             />
-
-            <div className="absolute inset-0 flex mt-10 flex-col items-center justify-center">
-                <div className="relative h-[1.6em] flex items-center justify-center overflow-hidden">
-                    <AnimatePresence mode="wait">
-                        <motion.h2
-                            key={phrases[index]}
-                            // Estado inicial: Abajo, invisible y desenfocado
-                            initial={{ opacity: 0, y: 15, filter: "blur(8px)" }}
-                            // Estado activo: En su lugar, visible y nítido
-                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            // Estado de salida: Arriba, invisible y desenfocado
-                            exit={{ opacity: 0, y: -15, filter: "blur(8px)" }}
-                            transition={{ 
-                                duration: 0.8, 
-                                ease: [0.2, 0.65, 0.3, 0.9] // Ease-out suave tipo iOS
-                            }}
-                            className="absolute text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400"
-                        >
-                            {phrases[index]}
-                        </motion.h2>
-                    </AnimatePresence>
-                </div>
-            </div>
         </div>
     );
 }
@@ -112,16 +80,16 @@ export default function Hero() {
             {/* Fondo de gradientes fríos estilo Apple */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
                 {/* Círculo Azul (Fondo Izquierda) */}
-                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-violet-400 blur-[130px]" />
+                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-violet-500 blur-[130px]" />
 
                 {/* Círculo Índigo (Fondo Centro-Abajo) - Este es el que más "mancha" la zona del teléfono */}
-                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-blue-300blur-[140px]" />
+                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-blue-500 blur-[140px]" />
 
                 {/* Círculo Cian/Lila (Fondo Derecha) */}
-                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-emerald-200 blur-[130px]" />
+                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-emerald-500 blur-[130px]" />
             </div>
 
-            <div className="relative mx-auto flex w-full flex-col items-center px-5 pt-20 sm:px-8 sm:pt-32 lg:px-6">
+            <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6">
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
                     <StatusBadge />
                     <HeroHeading />
