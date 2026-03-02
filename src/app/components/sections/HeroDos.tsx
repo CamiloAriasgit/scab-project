@@ -1,8 +1,10 @@
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import HeroDashboard from '../../../../public/images/MobileHero.png';
-import InterfaceMockup from "../ui/InterfaceMockup";
 
 function StatusBadge() {
     return (
@@ -11,15 +13,15 @@ function StatusBadge() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-r from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" />
                 <span
                     style={{ animationDelay: '0.2s' }}
-                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-b from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-b from-indigo-500/0 via-violet-500 to-indigo-500/0 opacity-75"
                 />
                 <span
                     style={{ animationDelay: '0.4s' }}
-                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-br from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-br from-indigo-500/0 via-purple-500 to-indigo-500/0 opacity-75"
                 />
                 <span
                     style={{ animationDelay: '0.6s' }}
-                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-bl from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75"
+                    className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-bl from-indigo-500/0 via-cyan-500 to-indigo-500/0 opacity-75"
                 />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-500/0" />
             </span>
@@ -33,7 +35,7 @@ function StatusBadge() {
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-4xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-5xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-foreground/90">
                 No es solo una web.<br />Es independencia digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
@@ -58,7 +60,18 @@ function HeroActions() {
     );
 }
 
+const phrases = ["Edita texto", "Reemplaza imágenes", "Añade items"];
+
 function HeroImage() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+        }, 4000); // 4 segundos para una lectura pausada
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div className="relative w-full lg:w-3/5">
             <Image
@@ -68,9 +81,26 @@ function HeroImage() {
             />
 
             <div className="absolute inset-0 flex mt-10 flex-col items-center justify-center">
-                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400">
-                    Hola, Name!
-                </h2>
+                <div className="relative h-[1.6em] flex items-center justify-center overflow-hidden">
+                    <AnimatePresence mode="wait">
+                        <motion.h2
+                            key={phrases[index]}
+                            // Estado inicial: Abajo, invisible y desenfocado
+                            initial={{ opacity: 0, y: 15, filter: "blur(8px)" }}
+                            // Estado activo: En su lugar, visible y nítido
+                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            // Estado de salida: Arriba, invisible y desenfocado
+                            exit={{ opacity: 0, y: -15, filter: "blur(8px)" }}
+                            transition={{ 
+                                duration: 0.8, 
+                                ease: [0.2, 0.65, 0.3, 0.9] // Ease-out suave tipo iOS
+                            }}
+                            className="absolute text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-violet-400"
+                        >
+                            {phrases[index]}
+                        </motion.h2>
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

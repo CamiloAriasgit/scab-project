@@ -13,10 +13,10 @@ function Logo() {
   return (
     <a href="#" className="group flex items-center gap-1 pl-2" aria-label="SCAB Systems home">
       <div className="flex flex-col">
-        <span className="text-[12px] font-bold leading-none tracking-[0.12em] text-foreground">
+        <span className="text-[12px] font-bold leading-none text-foreground">
           Sebastian
         </span>
-        <span className="pt-px text-[8px] font-medium uppercase leading-none tracking-[0.15em] text-muted-foreground/50">
+        <span className="pt-px text-[8px] text-center font-medium uppercase leading-none tracking-[8] text-muted-foreground/50">
           Arias
         </span>
       </div>
