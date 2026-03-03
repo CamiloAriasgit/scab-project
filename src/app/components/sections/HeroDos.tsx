@@ -44,7 +44,7 @@ function HeroHeading() {
 
 function HeroActions() {
     return (
-        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-10">
+        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-20 lg:mb-10 md:mb-10">
             <a
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
