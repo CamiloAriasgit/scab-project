@@ -74,22 +74,27 @@ function HeroImage() {
     );
 }
 
+function GradientBackground() {
+    return (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-violet-500 blur-[130px]" />
+                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-blue-500 blur-[140px]" />
+                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-cyan-500 blur-[130px]" />
+            </div>
+            );
+}
+
 export default function Hero() {
     return (
         <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-violet-500 blur-[130px]" />
-                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-blue-500 blur-[140px]" />
-                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-emerald-500 blur-[130px]" />
-            </div>
-
+            <GradientBackground />
             <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6">
                 <div className="flex flex-col items-center gap-8 sm:gap-1 lg:gap-1">
                     <StatusBadge />
                     <HeroHeading />
                     <HeroActions />
                 </div>
-                <HeroImage/>
+                <HeroImage />
             </div>
         </section>
     );
