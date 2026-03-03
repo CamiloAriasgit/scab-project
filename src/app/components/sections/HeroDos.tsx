@@ -36,7 +36,7 @@ function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-[2.75rem] md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground antialiased">
-                No es solo una web.<br />Es independencia digital.
+                No es solo una web.<br />Es control digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
     );
