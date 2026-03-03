@@ -8,7 +8,7 @@ import HeroDashboard from '../../../../public/images/3.png';
 
 function StatusBadge() {
     return (
-        <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-500/0 via-indigo-500/0 to-emerald-500/0 px-3.5 py-1.5 backdrop-blur-sm">
+        <div className="animate-hero-fade-up flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet-500/0 via-indigo-500/0 to-emerald-500/0 px-3.5 py-1.5 backdrop-blur-sm lg:pt-30 md:pt-30">
             <span className="relative flex h-2 w-2 items-center justify-center">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gradient-to-r from-indigo-500/0 via-indigo-500 to-indigo-500/0 opacity-75" />
                 <span
@@ -36,7 +36,7 @@ function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-[2.75rem] md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground antialiased">
-                No es solo una web.<br />Es control digital.
+                No es solo una web.<br />Es control <br className="block lg:hidden md:hidden" />digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
     );
