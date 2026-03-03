@@ -34,30 +34,27 @@ function StatusBadge() {
 
 function HeroHeading() {
     return (
-        <div className="flex flex-col items-center gap-4 lg:gap-5 max-w-4xl mx-auto">
+        <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
             <h1 className="text-balance text-center text-[2.75rem] md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground antialiased">
-                Tu web. <br className="hidden md:block" />
-                Bajo tu control.
-            </h1>
-            <p className="text-center text-lg md:text-xl text-[#5E6472] max-w-lg leading-relaxed">
-                Independencia digital real para gestionar <br className="hidden md:block" />
-                tu contenido sin fricciones.
-            </p>
+                No es solo una web.<br />Es independencia digital.
+            </h1> {/*Control total sobre tu sitio web.*/}
         </div>
     );
 }
 
 function HeroActions() {
     return (
-        <div className="flex flex-col items-center mt-10 mb-14">
+        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-10">
             <a
                 href="#contacto"
-                className="group flex h-12 items-center rounded-full bg-foreground px-6 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-foreground/5"
+                className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
             >
-                <span className="text-sm font-medium text-background">
-                    Empezar ahora
+                <span className="text-sm font-semibold text-background sm:text-[15px]">
+                    Empezar
                 </span>
-                <ArrowRight className="ml-2 h-4 w-4 text-background group-hover:translate-x-1 transition-transform" />
+                <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-background text-black transition-transform duration-300 group-hover:translate-x-0.5">
+                    <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
+                </div>
             </a>
         </div>
     );
@@ -67,12 +64,11 @@ function HeroActions() {
 function HeroImage() {
 
     return (
-        <div className="relative w-full max-w-[1000px] mx-auto mt-auto">
+        <div className="relative w-full lg:w-2/5">
             <Image
                 src={HeroDashboard}
-                alt="Interface"
-                className="w-full h-auto object-contain translate-y-[5%]" // El translate-y hace que parezca que emerge
-                priority
+                alt="A mobile interface preview"
+                className="h-auto w-full object-cover"
             />
         </div>
     );
@@ -93,7 +89,7 @@ export default function Hero() {
                     <HeroHeading />
                     <HeroActions />
                 </div>
-                <HeroImage />
+                <HeroImage/>
             </div>
         </section>
     );
