@@ -52,10 +52,6 @@ function DesktopNav({ activeSection }: { activeSection: string | null }) {
             >
               {item}
             </span>
-            {/* Active indicator dot */}
-            {isActive && (
-              <span className="absolute -bottom-0.5 left-1/2 h-px w-3 -translate-x-1/2 bg-foreground/40 transition-all" />
-            )}
           </a>
         );
       })}

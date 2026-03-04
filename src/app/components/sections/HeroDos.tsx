@@ -64,7 +64,7 @@ function HeroActions() {
 function HeroImage() {
 
     return (
-        <div className="relative w-full lg:w-2/5">
+        <div className="relative w-full lg:w-2/5 md:w-3/5">
             <Image
                 src={HeroDashboard}
                 alt="A mobile interface preview"
@@ -77,9 +77,9 @@ function HeroImage() {
 function GradientBackground() {
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-violet-500 blur-[130px]" />
-                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-blue-500 blur-[140px]" />
-                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-cyan-500 blur-[130px]" />
+                <div className="absolute -left-[15%] -bottom-[15%] h-[60%] w-[60%] rounded-full bg-blue-500 blur-[130px]" />
+                <div className="absolute left-1/2 bottom-[-10%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-cyan-500 blur-[140px]" />
+                <div className="absolute -right-[15%] -bottom-[10%] h-[60%] w-[60%] rounded-full bg-violet-500 blur-[130px]" />
             </div>
             );
 }

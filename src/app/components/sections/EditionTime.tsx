@@ -1,11 +1,10 @@
-import { ArrowRight } from "lucide-react";
 import S3 from '../../../../public/images/S3.png';
 
 
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-[clamp(2rem,6vw,4.5rem)] font-medium leading-[0.95] tracking-tight text-foreground/90">
+            <h1 className="text-balance text-center text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight text-foreground/80">
                 Actualiza en segundos sin procesos técnicos.
             </h1>
 
@@ -34,7 +33,6 @@ function MockUpImage() {
 export default function Mobile() {
     return (
         <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background selection:bg-foreground/5">
-            {/* Contenedor Principal: Aumentamos el padding top para dar aire */}
             <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-5 pt-20 pb-16 sm:px-8 sm:pt-32 lg:px-6">
 
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
