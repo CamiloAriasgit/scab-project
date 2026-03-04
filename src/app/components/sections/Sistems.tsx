@@ -60,7 +60,7 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
     <div className="max-w-3xl">
       <div className="flex items-center gap-3 mb-6">
         <Pencil className="h-5 w-5 text-indigo-600" />
-        <span className="text-lg font-medium text-foreground/60">{/* Label pequeño */}
+        <span className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60">{/* Label pequeño */}
           Control inmediato
         </span>
       </div>
@@ -79,7 +79,7 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.25} className="bg-white">
     <div className="flex items-center gap-3 mb-6">
       <Replace className="h-5 w-5 text-emerald-600" />
-      <span className="text-lg font-medium text-foreground/60">
+      <span className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60">
         Actualización sin fricción
       </span>
     </div>
@@ -94,7 +94,7 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.4} className="bg-white">
     <div className="flex items-center gap-3 mb-6">
       <Plus className="h-5 w-5 text-blue-600" />
-      <span className="text-lg font-medium text-foreground/60">
+      <span className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60">
         Crecimiento estructurado
       </span>
     </div>
