@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import S3 from '../../../../public/images/S3.png';
+
 
 function HeroHeading() {
     return (
@@ -20,8 +22,8 @@ function MockUpImage() {
         <div className="w-full animate-hero-fade-up-delay-2 sm:mt-0 lg:mt-0 sm:w-2xl">
             <div className="relative mx-auto max-w-5xl backdrop-blur-sm">
                 <img
-                    src="https://www.pngkey.com/png/full/808-8088735_responsive-dashboards-in-html5-web-design.png"
-                    alt="Dashboard Preview"
+                    src={S3.src}
+                    alt="Seción editable"
                     className="h-auto w-full object-cover"
                 />
             </div>
@@ -38,7 +40,6 @@ export default function Mobile() {
                 <div className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-12">
                     <HeroHeading />
                     <MockUpImage />
-                    <span className="text-pretty text-center text-sm leading-relaxed text-foreground/50">Más acción. Menos espera.</span>
                 </div>
 
             </div>
