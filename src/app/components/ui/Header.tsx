@@ -256,8 +256,8 @@ export default function Header() {
         <div
           className={`pointer-events-auto relative mx-auto overflow-hidden transition-all duration-700 ${
             scrolled
-              ? "max-w-3xl rounded-full border border-foreground/[0.06] bg-background/60 backdrop-blur-xl"
-              : "max-w-5xl rounded-full border border-transparent bg-background/50 backdrop-blur-sm"
+              ? "max-w-3xl rounded-full bg-background/60 backdrop-blur-xl"
+              : "max-w-5xl rounded-full bg-background/50 backdrop-blur-sm"
           }`}
         >
           {/* Subtle top border glow when scrolled */}
