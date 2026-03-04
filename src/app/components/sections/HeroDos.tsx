@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import HeroDashboard from '../../../../public/images/3.png';
+import HeroDashboard from '../../../../public/images/HeroMobile.png';
 
 function StatusBadge() {
     return (
