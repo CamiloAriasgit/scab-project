@@ -42,7 +42,7 @@ export default function Mobile() {
             <div className="mx-auto max-w-6xl">
                 
                 {/* Master Card que envuelve toda la sección */}
-                <div className="relative flex flex-col items-center overflow-hidden rounded-[2.5rem] bg-neutral-950">
+                <div className="relative flex flex-col items-center overflow-hidden rounded-[2.5rem] bg-neutral-950 shadow-xl">
                     
                     {/* Contenido Central */}
                     <div className="z-10 flex w-full flex-col lg:flex-row items-end ">
