@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import HeroDashboard from '../../../../public/images/HeroMobile.png';
+import HeroDashboard from '../../../../public/images/MobileHi.jpg';
 
 
 /* ─── Subcomponente: Encabezado ─── */
@@ -28,7 +28,7 @@ function MockUpImage() {
                 <img
                     src={HeroDashboard.src}
                     alt="Dashboard Preview"
-                    className="h-auto w-full object-cover"
+                    className="h-auto w-full object-cover border"
                 />
             </div>
         </div>
