@@ -74,7 +74,6 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
   </AppleCard>
 );
 
-/* ─── Card 2: Actualización sin fricción (Abajo Izquierda) ─── */
 const FrictionCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.25} className="bg-white">
     <div className="flex items-center gap-3 mb-6">
@@ -89,7 +88,6 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
   </AppleCard>
 );
 
-/* ─── Card 3: Crecimiento estructurado (Abajo Derecha) ─── */
 const GrowthCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.4} className="bg-white">
     <div className="flex items-center gap-3 mb-6">
@@ -104,7 +102,6 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
   </AppleCard>
 );
 
-/* ─── COMPONENTE FINAL ENSAMBLADO ─── */
 export default function Sistem() {
   const { ref, visible } = useReveal(0.05);
 
@@ -112,7 +109,7 @@ export default function Sistem() {
     <section ref={ref} id="sistema" className="w-full bg-background py-20 lg:py-40 font-sans">
       <div className="mx-auto max-w-[1200px] px-6 flex flex-col items-center">
 
-        <header className="mb-20 max-w-4xl">
+        <header className="mb-15 max-w-4xl">
           <h2
             className="text-balance text-center text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/80"
             style={{
@@ -125,7 +122,6 @@ export default function Sistem() {
           </h2>
         </header>
 
-        {/* Grid Corregido: 1 arriba (span 2), 2 abajo (1 cada una) */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
           <ControlCard visible={visible} />
           <FrictionCard visible={visible} />

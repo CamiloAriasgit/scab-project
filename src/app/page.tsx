@@ -6,6 +6,7 @@ import Footer from './components/ui/Footer';
 import Header from './components/ui/Header';
 import Mobile from './components/sections/Mobile';
 import EditionTime from './components/sections/EditionTime';
+import Fuction from './components/sections/Fuction';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Sistem />
       <EditionTime/>
       <Mobile />
+      <Fuction/>
       <Process />
       <CTA />
       <Footer />

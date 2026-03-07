@@ -1,20 +1,20 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import HeroDashboard from '../../../../public/images/MobileHi.jpg';
+import HeroDashboard from '../../../../public/images/S3.png';
 
 
 /* ─── Subcomponente: Encabezado ─── */
 function HeroHeading() {
     return (
         <div className="flex flex-col gap-5 lg:gap-6 px-9">
-            <h1 className="text-balance text-start text-5xl font-bold leading-[1.05] tracking-tight text-background/90">
-                Tu web bajo tu control desde <span className="bg-gradient-to-r from-background via-indigo-500 to-cyan-500 bg-clip-text text-transparent">cualquier lugar.</span>
+            <h1 className="text-balance text-start text-5xl font-bold leading-[1.05] tracking-tight text-foreground/80">
+                Un sistema simple por fuera. {" "}
+                <span className="bg-gradient-to-r from-foreground/80 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">Potente por dentro.</span>
             </h1>
 
-            <p className="max-w-xs text-pretty text-sm leading-relaxed text-background/60 sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
-                No importa si estás en la oficina, en casa o en movimiento.
-                Tu panel privado está optimizado para funcionar en cualquier dispositivo.
+            <p className="max-w-xs text-pretty text-sm leading-relaxed text-foreground/60 sm:max-w-sm sm:text-base lg:max-w-md lg:text-lg">
+                Diseñado para que puedas gestionar tu contenido sin depender de desarrolladores.
             </p>
         </div>
     );
@@ -24,7 +24,7 @@ function HeroHeading() {
 function MockUpImage() {
     return (
         <div className="relative w-full max-w-4xl px-4 pt-8">
-            <div className="relative mx-auto drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
                     src={HeroDashboard.src}
                     alt="Dashboard Preview"
@@ -42,7 +42,7 @@ export default function Mobile() {
             <div className="mx-auto max-w-6xl">
                 
                 {/* Master Card que envuelve toda la sección */}
-                <div className="relative flex flex-col items-center overflow-hidden rounded-[2.5rem] bg-neutral-950 shadow-xl">
+                <div className="relative flex flex-col items-center overflow-hidden rounded-[2.5rem] bg-background shadow-xl">
                     
                     {/* Contenido Central */}
                     <div className="z-10 flex w-full flex-col lg:flex-row items-end ">
