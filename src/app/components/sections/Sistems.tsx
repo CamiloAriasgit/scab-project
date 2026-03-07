@@ -65,7 +65,7 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
         </span>
       </div>
       <p className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
-        <span className="bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">
+        <span /*className="bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent"*/>
           Edita textos en segundos
         </span>{" "}
         desde tu panel privado.
@@ -112,18 +112,18 @@ export default function Sistem() {
     <section ref={ref} id="sistema" className="w-full bg-background py-20 lg:py-40 font-sans">
       <div className="mx-auto max-w-[1200px] px-6 flex flex-col items-center">
 
-        {/*<header className="mb-20 max-w-4xl">
+        <header className="mb-20 max-w-4xl">
           <h2
-            className="text-balance text-center text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/90"
+            className="text-balance text-center text-[clamp(1.75rem,5vw,3.25rem)] font-medium leading-[1.05] tracking-tight text-foreground/80"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0)" : "translateY(20px)",
               transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s",
             }}
           >
-            Un sistema diseñado para que tu web evolucione contigo.
+            Un sistema pensado para <span className="bg-gradient-to-r from-indigo-500 to-cyan-500 bg-clip-text text-transparent">evolucionar contigo.</span>
           </h2>
-        </header>*/}
+        </header>
 
         {/* Grid Corregido: 1 arriba (span 2), 2 abajo (1 cada una) */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">

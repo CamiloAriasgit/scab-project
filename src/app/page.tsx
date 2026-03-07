@@ -1,4 +1,4 @@
-import Hero from './components/sections/Hero';
+import Hero from './components/sections/HeroDos';
 import Sistem from './components/sections/Sistems';
 import Process from './components/sections/Process';
 import CTA from './components/sections/CTA';
