@@ -9,7 +9,7 @@ function HeroHeading() {
     return (
         <div className="flex flex-col gap-5 lg:gap-6 px-9">
             <h1 className="text-balance text-start text-5xl font-bold leading-[1.05] tracking-tight text-foreground/80">
-                Un sistema simple por fuera. {" "}
+                Simple por fuera. {" "}
                 <span className="bg-gradient-to-r from-foreground/80 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">Potente por dentro.</span>
             </h1>
 
