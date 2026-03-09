@@ -111,13 +111,12 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
-    <Images />
 
-    {/*<div className="flex items-center justify-center gap-4 mt-auto">
+    <div className="flex items-center justify-center gap-4 mt-auto">
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
       <div className="h-22 w-22 bg-indigo-400 rounded-xl" />
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-    </div>*/}
+    </div>
   </AppleCard>
 );
 
