@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
-import Carousel from '../../../../public/images/Carousel.png';
+import Carousel from '../../../../public/images/Carousel2.png';
 
 /* ─── Hook de Revelado ─── */
 function useReveal(threshold = 0.1) {
@@ -55,10 +55,10 @@ function AppleCard({
   );
 }
 
-function MockUpImage() {
+function Images() {
     return (
         <div className="relative w-full max-w-4xl px-4 pt-8">
-            <div className="relative mx-auto drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
                     src={Carousel.src}
                     alt="Dashboard Preview"
@@ -111,11 +111,13 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
-    <div className="flex items-center justify-center gap-4 mt-auto">
+    <Images />
+
+    {/*<div className="flex items-center justify-center gap-4 mt-auto">
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
       <div className="h-22 w-22 bg-indigo-400 rounded-xl" />
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-    </div>
+    </div>*/}
   </AppleCard>
 );
 

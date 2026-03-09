@@ -1,10 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { div } from "framer-motion/client";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import HeroDashboard from '../../../../public/images/MobileHi.jpg';
+
 
 function StatusBadge() {
     return (
