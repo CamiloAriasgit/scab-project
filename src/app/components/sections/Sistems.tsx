@@ -72,7 +72,6 @@ function MockUpImage() {
 /* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
-    {/* Contenedor flexible: columna en móvil, fila en desktop */}
     <div className="flex flex-col lg:flex-row lg:items-center justify-start gap-8 max-w-full">
 
       <div className="max-w-3xl">
@@ -90,7 +89,6 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
         </p>
       </div>
 
-      {/* Gráfico: se moverá a la derecha en LG gracias al flex-row del padre */}
       <div className="flex flex-col gap-2 justify-end">
         <div className="h-7 w-32 bg-violet-400 rounded-full" />
         <div className="h-7 w-48 bg-violet-300 rounded-full" />
