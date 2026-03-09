@@ -113,9 +113,9 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
-    <div className="flex items-center gap-4 mt-auto">
+    <div className="flex items-center justify-center gap-4 mt-auto">
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-      <div className="h-25 w-25 bg-indigo-400 rounded-xl" />
+      <div className="h-22 w-22 bg-indigo-400 rounded-xl" />
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
     </div>
   </AppleCard>
@@ -136,13 +136,13 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
     {/* Gráfico: Estructura de crecimiento (Grid) */}
     <div className="flex flex-wrap gap-3 mt-auto max-w-[200px]">
       {/* Bloque principal (Nuevo elemento) */}
-      <div className="h-12 w-12 bg-cyan-500 rounded-2xl" />
+      <div className="h-12 w-12 bg-cyan-500 rounded-xl" />
       
       {/* Bloques de la arquitectura existente */}
-      <div className="h-12 w-12 bg-cyan-200 rounded-2xl" />
-      <div className="h-12 w-12 bg-cyan-200 rounded-2xl" />
-      <div className="h-12 w-28 bg-cyan-100 rounded-full" />
-      <div className="h-12 w-12 bg-cyan-100 rounded-2xl" />
+      <div className="h-12 w-12 bg-cyan-300 rounded-xl" />
+      <div className="h-12 w-12 bg-cyan-300 rounded-xl" />
+      <div className="h-12 w-28 bg-cyan-200 rounded-xl" />
+      <div className="h-12 w-12 bg-cyan-200 rounded-xl" />
     </div>
   </AppleCard>
 );
