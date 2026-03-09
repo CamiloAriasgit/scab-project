@@ -59,7 +59,7 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
     {/* Contenedor flexible: columna en móvil, fila en desktop */}
     <div className="flex flex-col lg:flex-row lg:items-center justify-start gap-8 max-w-full">
-      
+
       <div className="max-w-3xl">
         <div className="flex items-center gap-3 mb-6">
           <Pencil className="h-5 w-5 text-violet-600" />
@@ -94,9 +94,17 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
         Actualización sin fricción
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80">
-       Reemplaza imágenes al instante, sin procesos técnicos.
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-12">
+      Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
+
+    {/* Gráfico: Representación de intercambio/reemplazo */}
+    <div className="flex items-center gap-4 mt-auto">
+      <div className="h-16 w-16 bg-indigo-400 rounded-2xl" />
+      <div className="h-2 w-12 bg-indigo-300 rounded-full" />
+      <div className="h-16 w-16 bg-indigo-200 rounded-2xl" />
+      <div className="h-16 w-8 bg-indigo-100 rounded-full" />
+    </div>
   </AppleCard>
 );
 
@@ -108,9 +116,21 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
         Crecimiento estructurado
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80">
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-12">
       Añade nuevos elementos dentro de una arquitectura pensada para mantener orden y coherencia.
     </p>
+
+    {/* Gráfico: Estructura de crecimiento (Grid) */}
+    <div className="flex flex-wrap gap-3 mt-auto max-w-[200px]">
+      {/* Bloque principal (Nuevo elemento) */}
+      <div className="h-12 w-12 bg-cyan-500 rounded-2xl" />
+      
+      {/* Bloques de la arquitectura existente */}
+      <div className="h-12 w-12 bg-cyan-200 rounded-2xl" />
+      <div className="h-12 w-12 bg-cyan-200 rounded-2xl" />
+      <div className="h-12 w-28 bg-cyan-100 rounded-full" />
+      <div className="h-12 w-12 bg-cyan-100 rounded-2xl" />
+    </div>
   </AppleCard>
 );
 
