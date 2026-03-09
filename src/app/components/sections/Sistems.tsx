@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
+import Carousel from '../../../../public/images/Carousel.png';
 
 /* ─── Hook de Revelado ─── */
 function useReveal(threshold = 0.1) {
@@ -54,6 +55,20 @@ function AppleCard({
   );
 }
 
+function MockUpImage() {
+    return (
+        <div className="relative w-full max-w-4xl px-4 pt-8">
+            <div className="relative mx-auto drop-shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+                <img
+                    src={Carousel.src}
+                    alt="Dashboard Preview"
+                    className="h-auto w-full object-cover"
+                />
+            </div>
+        </div>
+    );
+}
+
 /* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
@@ -98,12 +113,10 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
-    {/* Gráfico: Representación de intercambio/reemplazo */}
     <div className="flex items-center gap-4 mt-auto">
-      <div className="h-16 w-16 bg-indigo-400 rounded-2xl" />
-      <div className="h-2 w-12 bg-indigo-300 rounded-full" />
-      <div className="h-16 w-16 bg-indigo-200 rounded-2xl" />
-      <div className="h-16 w-8 bg-indigo-100 rounded-full" />
+      <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
+      <div className="h-25 w-25 bg-indigo-400 rounded-xl" />
+      <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
     </div>
   </AppleCard>
 );
