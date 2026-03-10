@@ -43,7 +43,7 @@ function AppleCard({
 }) {
   return (
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white p-10 shadow-xl transition-all duration-1000 md:p-14 ${className}`}
+      className={`group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white shadow-xl transition-all duration-1000  ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(40px)",
@@ -72,7 +72,7 @@ function Images() {
 
 function Project() {
     return (
-        <div className="relative w-full max-w-4xl px-4 pt-8">
+        <div className="relative w-full max-w-4xl">
             <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
                     src={Element.src}
@@ -87,7 +87,7 @@ function Project() {
 /* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
-    <div className="flex flex-col lg:flex-row lg:items-center justify-start gap-8 max-w-full">
+    <div className="flex flex-col p-10 md:p-14 lg:flex-row lg:items-center justify-start gap-8 max-w-full">
 
       <div className="max-w-3xl">
         <div className="flex items-center gap-3 mb-6">
@@ -116,13 +116,13 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
 
 const FrictionCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.25} className="bg-white">
-    <div className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-6 pt-10 md:pt-14 px-10 md:px-14">
       <Replace className="h-5 w-5 text-indigo-600" />
       <span className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60">
         Actualización sin fricción
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-12">
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-5 px-10 md:px-14">
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
@@ -139,13 +139,13 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
 
 const GrowthCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.4} className="bg-white">
-    <div className="flex items-center gap-3 mb-6">
+    <div className="flex items-center gap-3 mb-6 pt-10 md:pt-14 px-10 md:px-14">
       <Plus className="h-5 w-5 text-cyan-600" />
       <span className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60">
         Crecimiento estructurado
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-12">
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 px-10 md:px-14 mb-5">
       Añade nuevos elementos dentro de una arquitectura pensada para mantener orden y coherencia.
     </p>
 
