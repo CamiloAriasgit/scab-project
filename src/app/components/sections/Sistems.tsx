@@ -58,7 +58,7 @@ function AppleCard({
 
 function Images() {
     return (
-        <div className="relative w-full max-w-4xl px-4 pt-8">
+        <div className="relative w-full max-w-4xl px-4 pt-8 mb-5">
             <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
                     src={Carousel.src}
@@ -72,7 +72,7 @@ function Images() {
 
 function Project() {
     return (
-        <div className="relative w-full max-w-4xl">
+        <div className="relative w-full max-w-4xl mb-5">
             <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
                     src={Element.src}
@@ -122,18 +122,10 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
         Actualización sin fricción
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 mb-5 px-10 md:px-14">
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 px-10 md:px-14">
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
-
     <Images />
-
-
-    {/*<div className="flex items-center justify-center gap-4 mt-auto">
-      <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-      <div className="h-22 w-22 bg-indigo-400 rounded-xl" />
-      <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-    </div>*/}
   </AppleCard>
 );
 
@@ -145,22 +137,9 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
         Crecimiento estructurado
       </span>
     </div>
-    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 px-10 md:px-14 mb-5">
+    <p className="text-[2rem] md:text-[2.2rem] font-bold leading-[1.1] tracking-tight text-foreground/80 px-10 md:px-14 mb-4">
       Añade nuevos elementos dentro de una arquitectura pensada para mantener orden y coherencia.
     </p>
-
-    {/* Gráfico: Estructura de crecimiento (Grid) 
-    <div className="flex flex-wrap gap-3 mt-auto max-w-[200px]">
-     Bloque principal (Nuevo elemento) 
-      <div className="h-12 w-12 bg-cyan-500 rounded-xl" />
-      
-      {/* Bloques de la arquitectura existente 
-      {/*<div className="h-12 w-12 bg-cyan-300 rounded-xl" />
-      <div className="h-12 w-12 bg-cyan-300 rounded-xl" />
-      <div className="h-12 w-28 bg-cyan-200 rounded-xl" />
-      <div className="h-12 w-12 bg-cyan-200 rounded-xl" />
-    </div>*/}
-
     <Project />
   </AppleCard>
 );

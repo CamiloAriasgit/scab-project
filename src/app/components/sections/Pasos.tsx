@@ -21,9 +21,6 @@ function BentoCard({
       }}
     >
       {children}
-      <div className="absolute bottom-6 right-6 flex h-7 w-7 items-center justify-center rounded-full bg-[#1d1d1f] text-white transition-transform duration-300 group-hover:scale-110">
-        <Plus size={16} strokeWidth={3} />
-      </div>
     </div>
   );
 }
