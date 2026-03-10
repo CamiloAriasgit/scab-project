@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
-import Carousel from '../../../../public/images/Carousel2.png';
+import Carousel from '../../../../public/images/Forest.png';
+import Element from '../../../../public/images/Infraestructura.png';
 
 /* ─── Hook de Revelado ─── */
 function useReveal(threshold = 0.1) {
@@ -69,6 +70,20 @@ function Images() {
     );
 }
 
+function Project() {
+    return (
+        <div className="relative w-full max-w-4xl px-4 pt-8">
+            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
+                <img
+                    src={Element.src}
+                    alt="Dashboard Preview"
+                    className="h-auto w-full object-cover"
+                />
+            </div>
+        </div>
+    );
+}
+
 /* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
@@ -111,12 +126,14 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
       Reemplaza imágenes al instante, sin procesos técnicos.
     </p>
 
+    <Images />
 
-    <div className="flex items-center justify-center gap-4 mt-auto">
+
+    {/*<div className="flex items-center justify-center gap-4 mt-auto">
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
       <div className="h-22 w-22 bg-indigo-400 rounded-xl" />
       <div className="h-16 w-16 bg-indigo-300 rounded-xl" />
-    </div>
+    </div>*/}
   </AppleCard>
 );
 
@@ -132,17 +149,19 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
       Añade nuevos elementos dentro de una arquitectura pensada para mantener orden y coherencia.
     </p>
 
-    {/* Gráfico: Estructura de crecimiento (Grid) */}
+    {/* Gráfico: Estructura de crecimiento (Grid) 
     <div className="flex flex-wrap gap-3 mt-auto max-w-[200px]">
-      {/* Bloque principal (Nuevo elemento) */}
+     Bloque principal (Nuevo elemento) 
       <div className="h-12 w-12 bg-cyan-500 rounded-xl" />
       
-      {/* Bloques de la arquitectura existente */}
-      <div className="h-12 w-12 bg-cyan-300 rounded-xl" />
+      {/* Bloques de la arquitectura existente 
+      {/*<div className="h-12 w-12 bg-cyan-300 rounded-xl" />
       <div className="h-12 w-12 bg-cyan-300 rounded-xl" />
       <div className="h-12 w-28 bg-cyan-200 rounded-xl" />
       <div className="h-12 w-12 bg-cyan-200 rounded-xl" />
-    </div>
+    </div>*/}
+
+    <Project />
   </AppleCard>
 );
 
