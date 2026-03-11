@@ -85,11 +85,11 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
         Actualización sin fricción
       </h1>
     </div>
-    <p className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60 px-10 md:px-14 mb-10">
+    <p className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60 px-10 md:px-14">
       Publica contenido nuevo en segundos desde tu panel privado.
     </p>
 
-    <div className="relative h-48 w-full flex justify-center pt-10">
+    <div className="relative h-48 w-full flex justify-center pt-15">
       <div className="relative w-64 h-64">
         {/* 1. Cambiamos la rotación base a -120deg para situar el inicio a las 8 */}
         <svg className="w-full h-full transform -rotate-[190deg]">
