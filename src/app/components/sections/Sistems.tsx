@@ -141,7 +141,7 @@ export default function Sistem() {
 
   return (
     <section ref={ref} id="sistema" className="w-full bg-background py-20 lg:py-40 font-sans">
-      <div className="mx-auto max-w-[1200px] px-6 flex flex-col items-center">
+      <div className="mx-auto max-w-[1200px] px-4 flex flex-col items-center">
 
         <header className="mb-15 max-w-4xl">
           <h2
