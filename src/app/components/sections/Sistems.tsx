@@ -156,7 +156,7 @@ export default function Sistem() {
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <ControlCard visible={visible} />
           <FrictionCard visible={visible} />
           <GrowthCard visible={visible} />
