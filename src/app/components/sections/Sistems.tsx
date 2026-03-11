@@ -87,7 +87,7 @@ function Project() {
 /* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
-    <div className="flex flex-col p-10 md:p-14 lg:flex-row lg:items-center justify-start gap-8 max-w-full">
+    <div className="flex flex-col p-7 md:p-14 lg:flex-row lg:items-center justify-start gap-8 max-w-full">
 
       <div className="max-w-3xl">
         <div className="flex items-center gap-3 mb-6">
@@ -112,7 +112,7 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
 
 const FrictionCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.25} className="bg-white">
-    <div className="flex items-center gap-3 mb-6 pt-10 md:pt-14 px-10 md:px-14">
+    <div className="flex items-center gap-3 mb-6 pt-7 md:pt-14 px-10 md:px-14">
       <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
         Actualización sin fricción
       </h1>
@@ -125,7 +125,7 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
 
 const GrowthCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.4} className="bg-white">
-    <div className="flex items-center gap-3 mb-6 pt-10 md:pt-14 px-10 md:px-14">
+    <div className="flex items-center gap-3 mb-6 pt-7 md:pt-14 px-10 md:px-14">
       <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
         Arquitectura que mantiene orden
       </h1>
