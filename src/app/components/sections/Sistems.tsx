@@ -1,11 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
-import Carousel from '../../../../public/images/Forest.png';
-import Element from '../../../../public/images/Infraestructura.png';
 
-/* ─── Hook de Revelado ─── */
 function useReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -29,7 +27,6 @@ function useReveal(threshold = 0.1) {
   return { ref, visible };
 }
 
-/* ─── Contenedor Base ─── */
 function AppleCard({
   children,
   className = "",
@@ -43,7 +40,7 @@ function AppleCard({
 }) {
   return (
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-[2.5rem] bg-white shadow-xl transition-all duration-1000  ${className}`}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-1000  ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(40px)",
@@ -56,38 +53,9 @@ function AppleCard({
   );
 }
 
-function Images() {
-    return (
-        <div className="relative w-full max-w-4xl px-4 pt-8 mb-5">
-            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
-                <img
-                    src={Carousel.src}
-                    alt="Dashboard Preview"
-                    className="h-auto w-full object-cover"
-                />
-            </div>
-        </div>
-    );
-}
-
-function Project() {
-    return (
-        <div className="relative w-full max-w-4xl mb-5">
-            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
-                <img
-                    src={Element.src}
-                    alt="Dashboard Preview"
-                    className="h-auto w-full object-cover"
-                />
-            </div>
-        </div>
-    );
-}
-
-/* ─── Card 1: Control inmediato (Arriba, ancho total) ─── */
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
-    <div className="flex flex-col p-7 md:p-14 lg:flex-row lg:items-center justify-start gap-8 max-w-full">
+    <div className="flex flex-col p-7 md:p-14 lg:flex-row lg:items-center justify-between gap-8 max-w-full">
 
       <div className="max-w-3xl">
         <div className="flex items-center gap-3 mb-6">
@@ -111,8 +79,8 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
 );
 
 const FrictionCard = ({ visible }: { visible: boolean }) => (
-  <AppleCard visible={visible} delay={0.25} className="bg-white">
-    <div className="flex items-center gap-3 mb-6 pt-7 md:pt-14 px-10 md:px-14">
+  <AppleCard visible={visible} delay={0.25} className="bg-white overflow-hidden">
+    <div className="flex items-center gap-3 mb-4 pt-12 px-10 md:px-14">
       <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
         Actualización sin fricción
       </h1>
@@ -120,6 +88,56 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
     <p className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60 px-10 md:px-14 mb-10">
       Publica contenido nuevo en segundos desde tu panel privado.
     </p>
+
+    <div className="relative h-48 w-full flex justify-center pt-10">
+      <div className="relative w-64 h-64">
+        {/* 1. Cambiamos la rotación base a -120deg para situar el inicio a las 8 */}
+        <svg className="w-full h-full transform -rotate-[190deg]">
+          <circle
+            cx="128"
+            cy="128"
+            r="110"
+            stroke="currentColor"
+            strokeWidth="28"
+            fill="transparent"
+            className="text-gray-100"
+          />
+          <motion.circle
+            cx="128"
+            cy="128"
+            r="110"
+            stroke="url(#gradient)"
+            strokeWidth="28"
+            fill="transparent"
+            strokeDasharray="690"
+            initial={{ strokeDashoffset: 690 }}
+            animate={visible ? { strokeDashoffset: 400 } : { strokeDashoffset: 690 }}
+            transition={{ duration: 2, ease: "circOut", delay: 0.5 }}
+            strokeLinecap="round"
+          />
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#86efac" />
+              <stop offset="100%" stopColor="#22c55e" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <motion.div
+          className="absolute top-0 left-1/2 w-8 h-8 bg-green-600 rounded-full border-4 border-white shadow-sm"
+          initial={{ rotate: -120, x: "-50%" }}
+          animate={visible ? { rotate: 30 } : { rotate: -120 }}
+          style={{ originY: "128px" }}
+          transition={{ duration: 1.5, ease: "circOut", delay: 0.5 }}
+        />
+        
+        <div className="absolute inset-0 flex flex-col items-center justify-start pt-12">
+          <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+            Optimizado
+          </span>
+        </div>
+      </div>
+    </div>
   </AppleCard>
 );
 
