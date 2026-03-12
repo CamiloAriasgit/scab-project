@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
+import HeroDashboard from '../../../../public/images/PanelCliente.png';
+
 
 function useReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -53,11 +55,25 @@ function AppleCard({
   );
 }
 
+function MockUpImage() {
+    return (
+        <div className="relative w-full max-w-4xl">
+            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
+                <img
+                    src={HeroDashboard.src}
+                    alt="Dashboard Preview"
+                    className="h-auto w-full object-cover"
+                />
+            </div>
+        </div>
+    );
+}
+
 const ControlCard = ({ visible }: { visible: boolean }) => (
   <AppleCard visible={visible} delay={0.1} className="lg:col-span-2 bg-[#F5F5F7]">
-    <div className="flex flex-col p-7 md:p-14 lg:flex-row lg:items-center justify-between gap-8 max-w-full">
+    <div className="flex flex-col pt-7 md:pt-14 lg:flex-row lg:items-center justify-between gap-8 max-w-full">
 
-      <div className="max-w-3xl">
+      <div className="max-w-3xl px-7 md:px-14">
         <div className="flex items-center gap-3 mb-6">
           <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80">
             Contenido que evoluciona
@@ -68,11 +84,12 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
         </p>
       </div>
 
-      <div className="flex gap-2 justify-center items-end">
+      {/*<div className="flex gap-2 justify-center items-end">
         <div className="h-24 w-15 bg-violet-200 rounded-full" />
         <div className="h-32 w-15 bg-violet-300 rounded-full" />
         <div className="h-48 w-15 bg-violet-400 rounded-full" />
-      </div>
+      </div>*/}
+      <MockUpImage />
 
     </div>
   </AppleCard>
@@ -124,18 +141,12 @@ const FrictionCard = ({ visible }: { visible: boolean }) => (
         </svg>
 
         <motion.div
-          className="absolute top-0 left-1/2 w-8 h-8 bg-green-600 rounded-full border-4 border-white shadow-sm"
+          className="absolute top-0 left-1/2 w-8 h-8 bg-emerald-600 rounded-full border-4 border-white shadow-sm"
           initial={{ rotate: -120, x: "-50%" }}
           animate={visible ? { rotate: 30 } : { rotate: -120 }}
           style={{ originY: "128px" }}
           transition={{ duration: 1.5, ease: "circOut", delay: 0.5 }}
         />
-        
-        <div className="absolute inset-0 flex flex-col items-center justify-start pt-12">
-          <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-            Optimizado
-          </span>
-        </div>
       </div>
     </div>
   </AppleCard>
@@ -155,7 +166,7 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
 );
 
 export default function Sistem() {
-  const { ref, visible } = useReveal(0.05);
+  const { ref, visible } = useReveal(0.4);
 
   return (
     <section ref={ref} id="sistema" className="w-full bg-background py-20 lg:py-40 font-sans">
