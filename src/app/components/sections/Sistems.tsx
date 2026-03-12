@@ -183,7 +183,7 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
 );
 
 export default function Sistem() {
-  const { ref, visible } = useReveal(0.4);
+  const { ref, visible } = useReveal(0.05);
 
   return (
     <section ref={ref} id="sistema" className="w-full bg-background py-20 lg:py-40 font-sans">
