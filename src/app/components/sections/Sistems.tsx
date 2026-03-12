@@ -124,7 +124,7 @@ const FrictionCard = () => {
                 strokeDasharray="690"
                 initial={{ strokeDashoffset: 690 }}
                 animate={visible ? { strokeDashoffset: 400 } : { strokeDashoffset: 690 }}
-                transition={{ duration: 2, ease: "circOut", delay: 1 }}
+                transition={{ duration: 2, ease: "circOut", delay: 2 }}
                 strokeLinecap="round"
               />
               <defs>
@@ -139,7 +139,7 @@ const FrictionCard = () => {
               initial={{ rotate: -120, x: "-50%" }}
               animate={visible ? { rotate: 30 } : { rotate: -120 }}
               style={{ originY: "128px" }}
-              transition={{ duration: 1.5, ease: "circOut", delay: 1 }}
+              transition={{ duration: 1.5, ease: "circOut", delay: 3 }}
             />
           </div>
         </div>
