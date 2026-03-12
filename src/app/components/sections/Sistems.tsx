@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Pencil, Replace, Plus } from "lucide-react";
-import HeroDashboard from '../../../../public/images/PanelCliente.png';
+import Elements from '../../../../public/images/Elements.png';
+import Panel from '../../../../public/images/PanelCliente.png';
+
 
 
 function useReveal(threshold = 0.1) {
@@ -55,12 +57,26 @@ function AppleCard({
   );
 }
 
-function MockUpImage() {
+function Card1() {
     return (
         <div className="relative w-full max-w-4xl">
             <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
                 <img
-                    src={HeroDashboard.src}
+                    src={Elements.src}
+                    alt="Dashboard Preview"
+                    className="h-auto w-full object-cover"
+                />
+            </div>
+        </div>
+    );
+}
+
+function Card2() {
+    return (
+        <div className="relative w-full max-w-4xl">
+            <div className="relative mx-auto transition-transform duration-700 hover:scale-[1.02]">
+                <img
+                    src={Panel.src}
                     alt="Dashboard Preview"
                     className="h-auto w-full object-cover"
                 />
@@ -89,7 +105,7 @@ const ControlCard = ({ visible }: { visible: boolean }) => (
         <div className="h-32 w-15 bg-violet-300 rounded-full" />
         <div className="h-48 w-15 bg-violet-400 rounded-full" />
       </div>*/}
-      <MockUpImage />
+      <Card1 />
 
     </div>
   </AppleCard>
@@ -162,6 +178,7 @@ const GrowthCard = ({ visible }: { visible: boolean }) => (
     <p className="text-sm lg:text-lg md:text-lg font-medium text-foreground/60 px-10 md:px-14 mb-10">
       Tu sitio está diseñado para crecer sin perder coherencia.
     </p>
+    <Card2 />
   </AppleCard>
 );
 
