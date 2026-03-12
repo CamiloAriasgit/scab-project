@@ -38,11 +38,11 @@ function MockUpImage() {
 /* ─── Sección Principal Refactorizada ─── */
 export default function Mobile() {
     return (
-        <section className="w-full bg-background px-5 py-5 sm:px-8 lg:px-6 lg:py-15">
+        <section className="w-full bg-background px-4 py-5 sm:px-8 lg:px-6 lg:py-15">
             <div className="mx-auto max-w-6xl">
                 
                 {/* Master Card que envuelve toda la sección */}
-                <div className="relative flex flex-col items-center overflow-hidden rounded-[2.5rem] bg-neutral-950 shadow-xl">
+                <div className="relative flex flex-col items-center overflow-hidden rounded-3xl bg-neutral-950 shadow-xl">
                     
                     {/* Contenido Central */}
                     <div className="z-10 flex w-full flex-col lg:flex-row items-end ">

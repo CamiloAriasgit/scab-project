@@ -19,7 +19,6 @@ export default function Home() {
       <EditionTime/>
       <Mobile />
       <Fuction/>
-      <Pasos/>
       <Working />
     </main>
   );
