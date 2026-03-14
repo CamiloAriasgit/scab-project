@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, ReactNode, useState } from "react";
 // Importamos solo lo necesario para mantener el código limpio
-import Elements from '../../../../public/images/Elements.png';
+import Elements from '../../../../public/images/UiComponents.png';
 import Panel from '../../../../public/images/PanelCliente.png';
 
 // --- Hook de Visibilidad ---
@@ -84,7 +84,7 @@ const ControlCard = () => {
   return (
     <div ref={ref} className="lg:col-span-2">
       <AppleCard visible={visible} delay={0.1} className="bg-[#F5F5F7]">
-        <div className="flex flex-col pt-7 md:pt-14 lg:flex-row lg:items-center justify-between gap-8 max-w-full">
+        <div className="flex flex-col pt-7 md:pt-14 lg:flex-row lg:items-center justify-between gap-2 max-w-full">
           <div className="max-w-3xl px-7 md:px-14">
             <h1 className="text-[2.5rem] md:text-[3.5rem] font-bold leading-[1.05] tracking-tight text-foreground/80 mb-6">
               Contenido que evoluciona
