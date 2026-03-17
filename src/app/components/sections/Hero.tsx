@@ -35,7 +35,7 @@ function StatusBadge() {
 function HeroHeading() {
     return (
         <div className="animate-hero-fade-up-delay-1 flex flex-col items-center gap-5 lg:gap-6">
-            <h1 className="text-balance text-center text-[2rem] md:text-6xl lg:text-[5.5rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground antialiased">
+            <h1 className="text-balance text-center text-[2rem] md:text-6xl lg:text-[4rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground antialiased">
                 No es solo una web.<br />Es control digital.
             </h1> {/*Control total sobre tu sitio web.*/}
         </div>
@@ -44,7 +44,7 @@ function HeroHeading() {
 
 function HeroActions() {
     return (
-        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-20 lg:mb-10 md:mb-10">
+        <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-15 mt-8 lg:mb-10 md:mb-10">
             <a
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
@@ -68,7 +68,7 @@ function HeroImage() {
             <Image
                 src={HeroDashboard}
                 alt="A mobile interface preview"
-                className="h-auto w-full object-cover border shadow-xl rounded-xl mb-10"
+                className="h-auto w-full object-cover border shadow-xl rounded-xl"
             />
         </div>
     );
@@ -76,7 +76,7 @@ function HeroImage() {
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
             <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6">
                 <div className="flex flex-col items-center gap-8 sm:gap-1 lg:gap-1">
                     <StatusBadge />
