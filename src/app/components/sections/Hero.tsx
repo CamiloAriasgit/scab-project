@@ -76,8 +76,8 @@ function HeroImage() {
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
-            <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
+            <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6 pb-10">
                 <div className="flex flex-col items-center gap-8 sm:gap-1 lg:gap-1">
                     <StatusBadge />
                     <HeroHeading />
