@@ -45,11 +45,6 @@ function HeroHeading() {
 function HeroActions() {
     return (
         <div className="flex flex-col items-center gap-4 sm:flex-row lg:mt-8 mb-15 mt-8 lg:mb-10 md:mb-10">
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-200/90 rounded-full blur-[120px]" />
-        <div className="absolute top-[10%] right-[-10%] w-[40%] h-[40%] bg-purple-200/90 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[30%] h-[30%] bg-blue-100/90 rounded-full blur-[100px]" />
-      </div>
             <a
                 href="#contacto"
                 className="group relative flex h-13 items-center rounded-full bg-foreground p-2 pl-6 transition-all duration-300 hover:shadow-xl hover:shadow-foreground/10 active:scale-95"
@@ -81,8 +76,8 @@ function HeroImage() {
 
 export default function Hero() {
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
-            <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6 pb-10">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-end overflow-hidden bg-background selection:bg-foreground/5 -webkit-font-smoothing: antialiased;">
+            <div className="relative mx-auto flex w-full flex-col items-center px-5 sm:px-8 lg:px-6">
                 <div className="flex flex-col items-center gap-8 sm:gap-1 lg:gap-1">
                     <StatusBadge />
                     <HeroHeading />
